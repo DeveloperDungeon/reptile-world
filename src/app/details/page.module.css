@@ -32,9 +32,3 @@
 .Content {
   height: 800px;
 }
-
-.Banner,
-.QuickStats,
-.Content {
-  background-color: lightgrey;
-}
