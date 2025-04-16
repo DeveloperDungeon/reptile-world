@@ -1,0 +1,40 @@
+.Banner {
+  height: 500px;
+  margin-bottom: 2rem;
+}
+
+.Body {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .Body {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .QuickStats {
+    grid-column: span 1 / span 1;
+  }
+
+  .Content {
+    grid-column: span 2 / span 2;
+  }
+}
+
+/* Todo: Remove after modules are implemented. */
+
+.QuickStats {
+  height: 600px;
+}
+
+.Content {
+  height: 800px;
+}
+
+.Banner,
+.QuickStats,
+.Content {
+  background-color: lightgrey;
+}
