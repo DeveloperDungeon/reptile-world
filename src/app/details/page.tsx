@@ -1,13 +1,19 @@
-import Module from './Module';
+import Banner from './Banner';
+import Content from './Content';
 import styles from './page.module.css';
+import QuickStats from './QuickStats';
 
 export default function DetailsPage() {
   return (
     <>
-      <Module className={styles.Banner} />
+      <Banner />
       <div className={styles.Body}>
-        <Module className={styles.QuickStats} />
-        <Module className={styles.Content} />
+        <div className={styles.QuickStats}>
+          <QuickStats />
+        </div>
+        <div className={styles.Content}>
+          <Content />
+        </div>
       </div>
     </>
   );

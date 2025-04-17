@@ -1,0 +1,4 @@
+.QuickStats {
+  /* TODO(기곤): Remove hardcoded height after implementation. */
+  height: 600px;
+}
