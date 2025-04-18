@@ -30,7 +30,6 @@ function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | 
       member: familyTree,
       x: 0,
       y: 0,
-      isSelected: true,
     },
   ];
 
@@ -115,6 +114,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
           <FamilyMember
             member={member}
             size={MEMBER_SIZE_PX}
+            isSelected={member.member.id === selectedId}
             onSelect={() => {
               router.push(`/details/${member.member.id}`);
             }}

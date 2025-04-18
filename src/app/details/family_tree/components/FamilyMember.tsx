@@ -18,21 +18,22 @@ interface RelationLines {
 export interface FamilyMemberProps {
   member: FamilyMemberData;
   relationLines?: RelationLines;
-  isSelected?: boolean;
   childrenCount?: number;
 }
 
 interface Props {
   member: FamilyMemberProps;
   size: number;
+  isSelected: boolean;
   onSelect: () => void;
   isChildrenCountSelected: boolean;
   onChildrenCountSelected: () => void;
 }
 
 export default function FamilyMember({
-  member: { member, relationLines, isSelected, childrenCount },
+  member: { member, relationLines, childrenCount },
   size,
+  isSelected,
   onSelect,
   isChildrenCountSelected,
   onChildrenCountSelected }: Props) {
