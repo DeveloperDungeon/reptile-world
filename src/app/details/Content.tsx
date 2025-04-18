@@ -1,6 +1,6 @@
-import Module from './Module';
 import styles from './Content.module.css';
 import FamilyTree from './family_tree/FamilyTree';
+import Module from './Module';
 
 export default function Content() {
   return (

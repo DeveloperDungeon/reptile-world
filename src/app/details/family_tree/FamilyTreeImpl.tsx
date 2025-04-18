@@ -11,7 +11,11 @@ interface FamilyMemberDataWithCoords {
   y: number;
 }
 
-export default function FamilyTreeImpl() {
+interface Props {
+  familyTree: FamilyMemberData;
+}
+
+export default function FamilyTreeImpl({ familyTree }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [members, setMembers] = useState<FamilyMemberDataWithCoords[]>([]);
 
@@ -24,16 +28,14 @@ export default function FamilyTreeImpl() {
     const x = ref.current.clientWidth / 2 - 25;
     const y = ref.current.clientHeight / 2 - 25;
 
-    setMembers(() => [{
-      memberData: {
-        name: '게코',
-        imageSrc: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgwy1dOJa3-jpTfRxBmXG6-u-R8IzkG_AGlKLgesk_M2I1i3K4FMA0ZWqAI5HUpZXtqmG2hhfooARUr7r8wa--VA',
+    setMembers(() => [
+      {
+        memberData: familyTree,
+        x,
+        y,
       },
-      x,
-      y,
-    },
     ]);
-  }, []);
+  }, [familyTree]);
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
