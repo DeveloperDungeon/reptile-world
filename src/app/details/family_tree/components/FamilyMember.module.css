@@ -1,13 +1,45 @@
 .FamilyMember {
   display: inline-block;
-  border-radius: 50%;
-  overflow: hidden;
   position: relative;
+}
 
+.Image {
+  border-radius: 50%;
   cursor: pointer;
   transition: transform 80ms;
 }
 
-.FamilyMember:hover {
+.Image:hover {
   transform: scale(1.2);
+}
+
+.TopRelationLine,
+.RightRelationLine,
+.LeftRelationLine {
+  background-color: gray;
+  position: absolute;
+}
+
+.TopRelationLine {
+  width: 1px;
+  height: 15px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.RightRelationLine {
+  width: 25px;
+  height: 1px;
+  right: 0;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+.LeftRelationLine {
+  width: 25px;
+  height: 1px;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
 }
