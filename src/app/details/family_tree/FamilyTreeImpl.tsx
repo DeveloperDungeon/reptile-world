@@ -105,7 +105,18 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
         <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
-          <FamilyMember member={member} size={MEMBER_SIZE_PX} />
+          <FamilyMember
+            member={member}
+            size={MEMBER_SIZE_PX}
+            isChildrenCountSelected={member.member === selectedMate}
+            onChildrenCountSelected={() => {
+              setSelectedMate((mate) => {
+                if (mate === member.member) {
+                  return null;
+                }
+                return member.member;
+              });
+            }} />
         </div>
       ))}
     </div>

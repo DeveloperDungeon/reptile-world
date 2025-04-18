@@ -25,9 +25,15 @@ export interface FamilyMemberProps {
 interface Props {
   member: FamilyMemberProps;
   size: number;
+  isChildrenCountSelected: boolean;
+  onChildrenCountSelected: () => void;
 }
 
-export default function FamilyMember({ member: { member, relationLines, isSelected, childrenCount }, size }: Props) {
+export default function FamilyMember({
+  member: { member, relationLines, isSelected, childrenCount },
+  size,
+  isChildrenCountSelected,
+  onChildrenCountSelected }: Props) {
   return (
     <div className={styles.FamilyMember} style={{ width: size, height: size }}>
       {relationLines?.top && <div className={styles.TopRelationLine} />}
@@ -37,7 +43,11 @@ export default function FamilyMember({ member: { member, relationLines, isSelect
       {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
       <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} />
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
-      {childrenCount && <div className={styles.ChildrenCount}>{childrenCount}</div>}
+      {childrenCount && <div
+        className={styles.ChildrenCount + (isChildrenCountSelected ? ' ' + styles.Selected : '')}
+        onClick={onChildrenCountSelected}>
+        {childrenCount}
+      </div>}
     </div>
   );
 }
