@@ -5,16 +5,42 @@ import { useEffect, useRef } from 'react';
 import useElementSize from '../common/useElementSize';
 
 class GameScene extends Phaser.Scene {
+  private circleGraphics?: Phaser.GameObjects.Graphics;
+  private readonly circleRadius: number = 50;
+  private circleWorldX: number = 0;
+  private circleWorldY: number = 0;
+
   constructor() {
     super({ key: 'GameScene' });
   }
 
-  preload() {
-    console.log('Phaser: Preloading assets...');
-  }
+  preload() { }
 
   create() {
-    this.add.text(10, 10, 'Hello Phaser!', { color: '#0f0', fontSize: '16px' });
+    this.circleWorldX = this.cameras.main.scrollX + this.cameras.main.centerX;
+    this.circleWorldY = this.cameras.main.scrollY + this.cameras.main.centerY;
+
+    this.circleGraphics = this.add.graphics();
+    this.drawCircleInWorld();
+
+    this.cameras.main.setZoom(1);
+    this.cameras.main.centerOn(this.circleWorldX, this.circleWorldY);
+
+    let dragStartX = 0;
+    let dragStartY = 0;
+    this.input.on(Phaser.Input.Events.POINTER_DOWN, (pointer: Phaser.Input.Pointer) => {
+      dragStartX = pointer.x;
+      dragStartY = pointer.y;
+    });
+
+    this.input.on(Phaser.Input.Events.POINTER_MOVE, (pointer: Phaser.Input.Pointer) => {
+      if (pointer.isDown) {
+        this.cameras.main.scrollX -= (pointer.x - dragStartX) / this.cameras.main.zoom;
+        this.cameras.main.scrollY -= (pointer.y - dragStartY) / this.cameras.main.zoom;
+        dragStartX = pointer.x;
+        dragStartY = pointer.y;
+      }
+    });
 
     this.scale.on('resize', (gameSize: Phaser.Structs.Size) => {
       if (this.cameras.main) {
@@ -23,9 +49,14 @@ class GameScene extends Phaser.Scene {
     });
   }
 
-  update() {
-    // Game loop logic here
+  drawCircleInWorld() {
+    if (!this.circleGraphics) return;
+    this.circleGraphics.clear();
+    this.circleGraphics.fillStyle(0xffffff, 1);
+    this.circleGraphics.fillCircle(this.circleWorldX, this.circleWorldY, this.circleRadius);
   }
+
+  update() { }
 }
 
 export default function FamilyTreeImpl() {
@@ -35,7 +66,7 @@ export default function FamilyTreeImpl() {
   const { width, height } = useElementSize(parentRef);
 
   useEffect(() => {
-    if (gameRef.current && gameRef.current.scale) {
+    if (gameRef.current && gameRef.current.scale && width > 0 && height > 0) {
       gameRef.current.scale.resize(width, height);
     }
   }, [width, height]);
@@ -48,7 +79,6 @@ export default function FamilyTreeImpl() {
       const parentHeight = currentParentRef.clientHeight;
 
       if (parentWidth <= 0 || parentHeight <= 0) {
-        console.warn('Parent container has zero dimensions. Skipping Phaser initialization.');
         return;
       }
 
@@ -74,7 +104,6 @@ export default function FamilyTreeImpl() {
 
       try {
         gameRef.current = new Phaser.Game(config);
-
       } catch (error) {
         console.error('Error creating Phaser game instance:', error);
       }
