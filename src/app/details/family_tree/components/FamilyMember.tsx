@@ -19,9 +19,10 @@ export interface FamilyMemberProps {
   member: FamilyMemberData;
   relationLines?: RelationLines;
   isSelected?: boolean;
+  childrenCount?: number;
 }
 
-export default function FamilyMember({ member, relationLines, isSelected }: FamilyMemberProps) {
+export default function FamilyMember({ member, relationLines, isSelected, childrenCount }: FamilyMemberProps) {
   return (
     <div className={styles.FamilyMember} style={{ width: 50, height: 50 }}>
       {relationLines?.top && <div className={styles.TopRelationLine} />}
@@ -31,6 +32,7 @@ export default function FamilyMember({ member, relationLines, isSelected }: Fami
       {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
       <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} />
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
+      {childrenCount && <div className={styles.ChildrenCount}>{childrenCount}</div>}
     </div>
   );
 }

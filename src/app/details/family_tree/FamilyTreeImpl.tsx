@@ -40,6 +40,7 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
           left: true,
           bottomLeft: children != null,
         },
+        childrenCount: children?.length,
         x: x + 80,
         y: 0,
       });
@@ -100,7 +101,11 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
         <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
-          <FamilyMember member={member.member} relationLines={member.relationLines} isSelected={member.isSelected} />
+          <FamilyMember
+            member={member.member}
+            relationLines={member.relationLines}
+            isSelected={member.isSelected}
+            childrenCount={member.childrenCount} />
         </div>
       ))}
     </div>

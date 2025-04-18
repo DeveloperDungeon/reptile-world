@@ -1,6 +1,7 @@
 .FamilyMember {
   display: inline-block;
   position: relative;
+  --relation-line-length: 30px;
 }
 
 .Image {
@@ -26,7 +27,6 @@
 .BottomLeftRelationLine {
   background-color: gray;
   position: absolute;
-  --relation-line-length: 30px;
 }
 
 .TopRelationLine {
@@ -67,6 +67,29 @@
   left: calc(-0.5 * var(--relation-line-length));
   top: 50%;
   transform: translate(-50%, 0);
+}
+
+.ChildrenCount {
+  position: absolute;
+  left: calc(-0.5 * var(--relation-line-length));
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 120ms, color 120ms;
+}
+
+.ChildrenCount:hover {
+  background-color: var(--primary);
+  color: white;
 }
 
 .GenderBadge {
