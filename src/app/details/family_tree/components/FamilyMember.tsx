@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import FamilyMemberData from '../FamilyMemberData';
 import styles from './FamilyMember.module.css';
+import Link from 'next/link';
 
 interface RelationLines {
   // Used to connect with parents.
@@ -25,7 +26,6 @@ interface Props {
   member: FamilyMemberProps;
   size: number;
   isSelected: boolean;
-  onSelect: () => void;
   isChildrenCountSelected: boolean;
   onChildrenCountSelected: () => void;
 }
@@ -34,7 +34,6 @@ export default function FamilyMember({
   member: { member, relationLines, childrenCount },
   size,
   isSelected,
-  onSelect,
   isChildrenCountSelected,
   onChildrenCountSelected }: Props) {
   return (
@@ -44,7 +43,9 @@ export default function FamilyMember({
       {relationLines?.left && <div className={styles.LeftRelationLine} />}
       <div className={styles.TopLeftRelationLine} style={{ width: relationLines?.siblingLineLength ?? 0 }} />
       {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
-      <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} onClick={onSelect} />
+      <Link href={`/details/${member.id}`}>
+        <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} />
+      </Link>
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
       {childrenCount && <div
         className={styles.ChildrenCount + (isChildrenCountSelected ? ' ' + styles.Selected : '')}

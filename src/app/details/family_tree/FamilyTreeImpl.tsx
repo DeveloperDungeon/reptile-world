@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
@@ -85,8 +84,6 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
   const [selectedMateIds, setSelectedMateIds] = useState(new Set<string>());
 
-  const router = useRouter();
-
   useEffect(() => {
     const mateIds = new Set<string>();
 
@@ -170,9 +167,6 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
             member={member}
             size={MEMBER_SIZE_PX}
             isSelected={member.member.id === selectedId}
-            onSelect={() => {
-              router.push(`/details/${member.member.id}`);
-            }}
             isChildrenCountSelected={selectedMateIds.has(member.member.id)}
             onChildrenCountSelected={() => {
               setSelectedMateIds((mateIds) => {
