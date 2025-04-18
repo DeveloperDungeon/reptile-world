@@ -9,6 +9,7 @@
   border-radius: 50%;
   cursor: pointer;
   transition: transform 80ms;
+  object-fit: cover;
 }
 
 .Image:hover {
