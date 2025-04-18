@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import FamilyMemberData from './FamilyMemberData';
+import FamilyMemberData from '../FamilyMemberData';
 import styles from './FamilyMember.module.css';
 
 interface Props {

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
-import FamilyMember from './FamilyMember';
+import FamilyMember from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
 
