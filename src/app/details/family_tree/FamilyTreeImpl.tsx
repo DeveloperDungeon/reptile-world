@@ -88,6 +88,30 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const router = useRouter();
 
   useEffect(() => {
+    const mateIds = new Set<string>();
+
+    function findPathToSelectedId(entity: FamilyMemberData) {
+      if (entity.id === selectedId) return true;
+      if (!entity.mates) return false;
+
+      for (const mate of entity.mates) {
+        if (!mate.children) continue;
+
+        for (const child of mate.children) {
+          if (findPathToSelectedId(child)) {
+            mateIds.add(mate.mate.id);
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    findPathToSelectedId(familyTree);
+    setSelectedMateIds(mateIds);
+  }, [familyTree]);
+
+  useEffect(() => {
     if (ref.current == null) {
       return;
     }
