@@ -24,7 +24,7 @@ interface Translate {
   dy: number;
 }
 
-function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | null): FamilyMemberDataRenderingProps[] {
+function convert(familyTree: FamilyMemberData, selectedMateId: string | null): FamilyMemberDataRenderingProps[] {
   const membersWithCoords: FamilyMemberDataRenderingProps[] = [
     {
       member: familyTree,
@@ -41,14 +41,14 @@ function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | 
         member: mate,
         relationLines: {
           left: true,
-          bottomLeft: mate === selectedMate && children != null,
+          bottomLeft: mate.id === selectedMateId && children != null,
         },
         childrenCount: children?.length,
         x: x + MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX,
         y: 0,
       });
 
-      if (mate === selectedMate && children) {
+      if (mate.id === selectedMateId && children) {
         let dx = (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2 - (children.length - 1) * (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2;
         for (let i = 0; i < children.length; i++) {
           const child = children[i];
@@ -76,7 +76,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
-  const [selectedMate, setSelectedMate] = useState<FamilyMemberData | null>(null);
+  const [selectedMateId, setSelectedMateId] = useState<string | null>(null);
 
   const router = useRouter();
 
@@ -85,7 +85,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
       return;
     }
 
-    const members = convert(familyTree, selectedMate);
+    const members = convert(familyTree, selectedMateId);
     setMembers(() => members);
 
     const minX = Math.min(...members.map((member) => member.x));
@@ -100,7 +100,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
       dx: ref.current.clientWidth / 2 - MEMBER_SIZE_PX / 2 - centerX,
       dy: ref.current.clientHeight / 2 - MEMBER_SIZE_PX / 2 - centerY,
     });
-  }, [familyTree, selectedMate]);
+  }, [familyTree, selectedMateId]);
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
@@ -118,13 +118,13 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
             onSelect={() => {
               router.push(`/details/${member.member.id}`);
             }}
-            isChildrenCountSelected={member.member === selectedMate}
+            isChildrenCountSelected={member.member.id === selectedMateId}
             onChildrenCountSelected={() => {
-              setSelectedMate((mate) => {
-                if (mate === member.member) {
+              setSelectedMateId((mateId) => {
+                if (mateId === member.member.id) {
                   return null;
                 }
-                return member.member;
+                return member.member.id;
               });
             }} />
         </div>
