@@ -82,33 +82,34 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
-  const [selectedMateIds, setSelectedMateIds] = useState(new Set<string>());
+  const [selectedMateIds, setSelectedMateIds] = useState<Set<string> | null>(null);
 
   useEffect(() => {
-    const mateIds = new Set<string>();
+    if (selectedMateIds == null) {
+      const mateIds = new Set<string>();
 
-    function findPathToSelectedId(entity: FamilyMemberData) {
-      if (entity.id === selectedId) return true;
-      if (!entity.mates) return false;
+      function findPathToSelectedId(entity: FamilyMemberData) {
+        if (entity.id === selectedId) return true;
+        if (!entity.mates) return false;
 
-      for (const mate of entity.mates) {
-        if (!mate.children) continue;
+        for (const mate of entity.mates) {
+          if (!mate.children) continue;
 
-        for (const child of mate.children) {
-          if (findPathToSelectedId(child)) {
-            mateIds.add(mate.mate.id);
-            return true;
+          for (const child of mate.children) {
+            if (findPathToSelectedId(child)) {
+              mateIds.add(mate.mate.id);
+              return true;
+            }
           }
         }
+        return false;
       }
-      return false;
+
+      findPathToSelectedId(familyTree);
+      setSelectedMateIds(mateIds);
+      return;
     }
 
-    findPathToSelectedId(familyTree);
-    setSelectedMateIds(mateIds);
-  }, [familyTree]);
-
-  useEffect(() => {
     if (ref.current == null) {
       return;
     }
