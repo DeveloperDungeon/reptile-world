@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
-import FamilyMember from './components/FamilyMember';
+import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
 
-interface FamilyMemberDataWithCoords {
-  memberData: FamilyMemberData;
+interface FamilyMemberDataRenderingProps extends FamilyMemberProps {
   x: number;
   y: number;
 }
@@ -20,23 +19,38 @@ interface Translate {
   dy: number;
 }
 
-function convert(familyTree: FamilyMemberData): FamilyMemberDataWithCoords[] {
-  const membersWithCoords: FamilyMemberDataWithCoords[] = [
+function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[] {
+  const membersWithCoords: FamilyMemberDataRenderingProps[] = [
     {
-      memberData: familyTree,
+      member: familyTree,
       x: 0,
       y: 0,
     },
   ];
 
+  if (familyTree.mates) {
+    let x = 0;
+    let y = 0;
 
+    for (const { mate } of familyTree.mates) {
+      membersWithCoords.push({
+        member: mate,
+        relationLines: {
+          left: true,
+        },
+        x: x + 80,
+        y: 0,
+      });
+      x += 80;
+    }
+  }
 
   return membersWithCoords;
 }
 
 export default function FamilyTreeImpl({ familyTree }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [members, setMembers] = useState<FamilyMemberDataWithCoords[]>([]);
+  const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
 
   // Position family members
@@ -48,7 +62,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     const members = convert(familyTree);
     setMembers(() => members);
 
-    const selected = members.find((memberWithCoord) => memberWithCoord.memberData === familyTree);
+    const selected = members.find((memberWithCoord) => memberWithCoord.member === familyTree);
     if (selected == null) {
       return;
     }
@@ -66,7 +80,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
         <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
-          <FamilyMember member={member.memberData} />
+          <FamilyMember member={member.member} relationLines={member.relationLines} />
         </div>
       ))}
     </div>

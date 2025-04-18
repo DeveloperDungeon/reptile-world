@@ -3,4 +3,9 @@ export default interface FamilyMemberData {
   imageSrc: string;
 
   isMale: boolean;
+
+  mates?: {
+    mate: FamilyMemberData;
+    children?: FamilyMemberData[];
+  }[];
 }

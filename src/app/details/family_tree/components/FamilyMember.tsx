@@ -11,12 +11,12 @@ interface RelationLines {
   left?: boolean;
 }
 
-interface Props {
+export interface FamilyMemberProps {
   member: FamilyMemberData;
   relationLines?: RelationLines;
 }
 
-export default function FamilyMember({ member, relationLines }: Props) {
+export default function FamilyMember({ member, relationLines }: FamilyMemberProps) {
   return (
     <div className={styles.FamilyMember} style={{ width: 50, height: 50 }}>
       {relationLines?.top && <div className={styles.TopRelationLine} />}

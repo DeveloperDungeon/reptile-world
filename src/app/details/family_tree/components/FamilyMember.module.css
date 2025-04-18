@@ -18,18 +18,19 @@
 .LeftRelationLine {
   background-color: gray;
   position: absolute;
+  --relation-line-length: 30px;
 }
 
 .TopRelationLine {
   width: 1px;
-  height: 15px;
+  height: var(--relation-line-length);
   left: 50%;
   top: 0;
   transform: translate(-50%, -100%);
 }
 
 .RightRelationLine {
-  width: 25px;
+  width: var(--relation-line-length);
   height: 1px;
   right: 0;
   top: 50%;
@@ -37,7 +38,7 @@
 }
 
 .LeftRelationLine {
-  width: 25px;
+  width: var(--relation-line-length);
   height: 1px;
   left: 0;
   top: 50%;
