@@ -88,13 +88,6 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
 
     const members = convert(familyTree, selectedMate);
     setMembers(() => members);
-  }, [familyTree, selectedMate]);
-
-  // Position family members
-  useEffect(() => {
-    if (ref.current == null) {
-      return;
-    }
 
     const minX = Math.min(...members.map((member) => member.x));
     const maxX = Math.max(...members.map((member) => member.x));
@@ -108,7 +101,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
       dx: ref.current.clientWidth / 2 - MEMBER_SIZE_PX / 2 - centerX,
       dy: ref.current.clientHeight / 2 - MEMBER_SIZE_PX / 2 - centerY,
     });
-  }, [familyTree, members]);
+  }, [familyTree, selectedMate]);
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
