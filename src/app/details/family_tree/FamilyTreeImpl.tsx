@@ -21,13 +21,17 @@ interface Translate {
 }
 
 function convert(familyTree: FamilyMemberData): FamilyMemberDataWithCoords[] {
-  return [
+  const membersWithCoords: FamilyMemberDataWithCoords[] = [
     {
       memberData: familyTree,
       x: 0,
       y: 0,
     },
   ];
+
+
+
+  return membersWithCoords;
 }
 
 export default function FamilyTreeImpl({ familyTree }: Props) {

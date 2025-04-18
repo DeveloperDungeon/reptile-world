@@ -23,6 +23,7 @@ export default function FamilyMember({ member, relationLines }: Props) {
       {relationLines?.right && <div className={styles.RightRelationLine} />}
       {relationLines?.left && <div className={styles.LeftRelationLine} />}
       <Image src={member.imageSrc} alt={member.name} fill className={styles.Image} />
+      <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
     </div>
   );
 }
