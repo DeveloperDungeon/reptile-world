@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
@@ -15,6 +16,7 @@ interface FamilyMemberDataRenderingProps extends FamilyMemberProps {
 
 interface Props {
   familyTree: FamilyMemberData;
+  selectedId: string;
 }
 
 interface Translate {
@@ -71,11 +73,13 @@ function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | 
   return membersWithCoords;
 }
 
-export default function FamilyTreeImpl({ familyTree }: Props) {
+export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
   const [selectedMate, setSelectedMate] = useState<FamilyMemberData | null>(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (ref.current == null) {
@@ -108,7 +112,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
-      {members.map((member, i) => (
+      {members.map((member) => (
         <div key={'family-member-' + member.member.name} style={{
           position: 'absolute',
           left: member.x + translate.dx,
@@ -118,6 +122,9 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
           <FamilyMember
             member={member}
             size={MEMBER_SIZE_PX}
+            onSelect={() => {
+              router.push(`/details/${member.member.id}`);
+            }}
             isChildrenCountSelected={member.member === selectedMate}
             onChildrenCountSelected={() => {
               setSelectedMate((mate) => {
