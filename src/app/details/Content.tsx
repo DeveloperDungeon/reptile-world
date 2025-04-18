@@ -1,9 +1,11 @@
 import Module from './Module';
-import stlyes from './Content.module.css';
+import styles from './Content.module.css';
+import FamilyTree from './FamilyTree';
 
 export default function Content() {
   return (
-    <Module className={stlyes.Content} title="가계도">
+    <Module className={styles.Content} title="가계도">
+      <FamilyTree />
     </Module>
   );
 }
