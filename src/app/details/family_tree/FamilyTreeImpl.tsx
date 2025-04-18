@@ -34,7 +34,6 @@ function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | 
 
   if (familyTree.mates) {
     let x = 0;
-    let y = 0;
 
     for (const { mate, children } of familyTree.mates) {
       membersWithCoords.push({
@@ -78,7 +77,6 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
   const [selectedMate, setSelectedMate] = useState<FamilyMemberData | null>(null);
 
-  // Position family members
   useEffect(() => {
     if (ref.current == null) {
       return;
@@ -86,25 +84,37 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
 
     const members = convert(familyTree, selectedMate);
     setMembers(() => members);
+  }, [familyTree, selectedMate]);
 
-    const selected = members.find((memberWithCoord) => memberWithCoord.member === familyTree);
-    if (selected == null) {
+  // Position family members
+  useEffect(() => {
+    if (ref.current == null) {
       return;
     }
 
-    const centerX = ref.current.clientWidth / 2 - 25;
-    const centerY = ref.current.clientHeight / 2 - 25;
+    const minX = Math.min(...members.map((member) => member.x));
+    const maxX = Math.max(...members.map((member) => member.x));
+    const centerX = (minX + maxX) / 2;
+
+    const minY = Math.min(...members.map((member) => member.y));
+    const maxY = Math.max(...members.map((member) => member.y));
+    const centerY = (minY + maxY) / 2;
 
     setTranslate({
-      dx: centerX - selected.x,
-      dy: centerY - selected.y,
+      dx: ref.current.clientWidth / 2 - MEMBER_SIZE_PX / 2 - centerX,
+      dy: ref.current.clientHeight / 2 - MEMBER_SIZE_PX / 2 - centerY,
     });
-  }, [familyTree, selectedMate]);
+  }, [familyTree, members]);
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
-        <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
+        <div key={'family-member-' + member.member.name} style={{
+          position: 'absolute',
+          left: member.x + translate.dx,
+          top: member.y + translate.dy,
+          transition: 'left 120ms, top 120ms',
+        }}>
           <FamilyMember
             member={member}
             size={MEMBER_SIZE_PX}
