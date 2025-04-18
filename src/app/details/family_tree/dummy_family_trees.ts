@@ -166,6 +166,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
               },
               {
                 mate: DUMMY_FEMALE_4,
+                children: [DUMMY_MALE_5],
               },
               {
                 mate: DUMMY_FEMALE_5,
@@ -190,6 +191,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
+                children: [DUMMY_MALE_4],
               },
               {
                 mate: DUMMY_FEMALE_4,
