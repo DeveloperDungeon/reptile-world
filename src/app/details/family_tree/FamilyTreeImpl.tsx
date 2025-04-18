@@ -136,7 +136,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   return (
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member) => (
-        <div key={'family-member-' + member.member.name} style={{
+        <div key={'family-member-' + member.member.id} style={{
           position: 'absolute',
           left: member.x + translate.dx,
           top: member.y + translate.dy,
