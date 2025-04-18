@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
@@ -133,6 +133,30 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
     });
   }, [familyTree, selectedMateIds]);
 
+  const getOriginalMate = useCallback((mateId: string): FamilyMemberData | null => {
+    function find(entity: FamilyMemberData): FamilyMemberData | null {
+      if (!entity.mates) return null;
+
+      for (const mate of entity.mates) {
+        if (mate.mate.id === mateId) {
+          return entity;
+        }
+
+        if (!mate.children) continue;
+
+        for (const child of mate.children) {
+          const findResult = find(child);
+          if (findResult != null) {
+            return findResult;
+          }
+        }
+      }
+      return null;
+    }
+
+    return find(familyTree);
+  }, [familyTree]);
+
   return (
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member) => (
@@ -156,6 +180,12 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
                 if (newMateIds.has(member.member.id)) {
                   newMateIds.delete(member.member.id);
                 } else {
+                  const originalMate = getOriginalMate(member.member.id);
+                  if (originalMate) {
+                    for (const mateId of originalMate.mates?.map((mate) => mate.mate.id) ?? []) {
+                      newMateIds.delete(mateId);
+                    }
+                  }
                   newMateIds.add(member.member.id);
                 }
                 return newMateIds;

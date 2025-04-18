@@ -40,6 +40,14 @@ const DUMMY_MALE_5: FamilyMemberData = {
   isMale: true,
 };
 
+const DUMMY_MALE_6: FamilyMemberData = {
+  id: '11',
+  imageSrc:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDRi2eZVNfazn4JZezD2w5unH6eQbLmGpssgc9FiLWDCvOPaF_qc9YCf_YdVKwqTCuf0&usqp=CAU',
+  name: '게코 수컷 6',
+  isMale: true,
+};
+
 const DUMMY_FEMALE_1: FamilyMemberData = {
   id: '6',
   imageSrc:
@@ -94,7 +102,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4],
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -133,7 +141,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4],
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -162,7 +170,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4],
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -191,7 +199,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4],
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -220,7 +228,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4],
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -252,7 +260,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
     mates: [
       {
         mate: DUMMY_MALE_3,
-        children: [DUMMY_MALE_4],
+        children: [DUMMY_MALE_4, DUMMY_MALE_6],
       },
     ],
   },
@@ -272,6 +280,35 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
     mates: [
       {
         mate: DUMMY_MALE_3,
+      },
+    ],
+  },
+  // id: 11
+  {
+    ...DUMMY_MALE_1,
+    mates: [
+      {
+        mate: DUMMY_FEMALE_1,
+        children: [
+          DUMMY_MALE_2,
+          {
+            ...DUMMY_MALE_3,
+            mates: [
+              {
+                mate: DUMMY_FEMALE_3,
+                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+              },
+              {
+                mate: DUMMY_FEMALE_4,
+                children: [DUMMY_MALE_5],
+              },
+              {
+                mate: DUMMY_FEMALE_5,
+              },
+            ],
+          },
+          DUMMY_FEMALE_2,
+        ],
       },
     ],
   },
