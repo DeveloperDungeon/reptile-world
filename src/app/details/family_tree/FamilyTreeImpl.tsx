@@ -24,19 +24,25 @@ interface Translate {
   dy: number;
 }
 
-function convert(familyTree: FamilyMemberData, selectedMateId: string | null): FamilyMemberDataRenderingProps[] {
-  const membersWithCoords: FamilyMemberDataRenderingProps[] = [
-    {
-      member: familyTree,
-      x: 0,
-      y: 0,
+function append(
+  membersWithCoords: FamilyMemberDataRenderingProps[],
+  entity: FamilyMemberData,
+  selectedMateId: string | null,
+  x: number,
+  y: number,
+  siblingLineLength: number) {
+  membersWithCoords.push({
+    member: entity,
+    x,
+    y,
+    relationLines: {
+      top: y > 0,
+      siblingLineLength,
     },
-  ];
+  });
 
-  if (familyTree.mates) {
-    let x = 0;
-
-    for (const { mate, children } of familyTree.mates) {
+  if (entity.mates) {
+    for (const { mate, children } of entity.mates) {
       membersWithCoords.push({
         member: mate,
         relationLines: {
@@ -45,29 +51,30 @@ function convert(familyTree: FamilyMemberData, selectedMateId: string | null): F
         },
         childrenCount: children?.length,
         x: x + MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX,
-        y: 0,
+        y: y,
       });
 
       if (mate.id === selectedMateId && children) {
         let dx = (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2 - (children.length - 1) * (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2;
+        let siblingLineLength = 0;
         for (let i = 0; i < children.length; i++) {
           const child = children[i];
-          membersWithCoords.push({
-            member: child,
-            relationLines: {
-              top: true,
-              topLeft: i > 0,
-            },
-            x: x + dx,
-            y: 100,
-          });
-          dx += MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX;
+          append(membersWithCoords, child, selectedMateId, x + dx, y + 100, siblingLineLength);
+
+          siblingLineLength = (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) * (1 + (child.mates?.length ?? 0));
+          dx += siblingLineLength;
         }
       }
 
       x += MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX;
     }
   }
+}
+
+function convert(familyTree: FamilyMemberData, selectedMateId: string | null): FamilyMemberDataRenderingProps[] {
+  const membersWithCoords: FamilyMemberDataRenderingProps[] = [];
+
+  append(membersWithCoords, familyTree, selectedMateId, 0, 0, 0);
 
   return membersWithCoords;
 }

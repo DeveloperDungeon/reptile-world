@@ -10,7 +10,7 @@ interface RelationLines {
   // Used to connect with a couple male.
   left?: boolean;
   // Used to connect with left sibling.
-  topLeft?: boolean;
+  siblingLineLength?: number;
   // Used to connect with children.
   bottomLeft?: boolean;
 }
@@ -42,7 +42,7 @@ export default function FamilyMember({
       {relationLines?.top && <div className={styles.TopRelationLine} />}
       {relationLines?.right && <div className={styles.RightRelationLine} />}
       {relationLines?.left && <div className={styles.LeftRelationLine} />}
-      {relationLines?.topLeft && <div className={styles.TopLeftRelationLine} />}
+      <div className={styles.TopLeftRelationLine} style={{ width: relationLines?.siblingLineLength ?? 0 }} />
       {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
       <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} onClick={onSelect} />
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>

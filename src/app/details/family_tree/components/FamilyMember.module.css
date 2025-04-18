@@ -55,7 +55,6 @@
 }
 
 .TopLeftRelationLine {
-  width: calc(var(--relation-line-length) + var(--member-size));
   height: 1px;
   left: 50%;
   top: calc(-1 * var(--relation-line-length));
