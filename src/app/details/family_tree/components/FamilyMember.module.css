@@ -15,7 +15,9 @@
 
 .TopRelationLine,
 .RightRelationLine,
-.LeftRelationLine {
+.LeftRelationLine,
+.TopLeftRelationLine,
+.BottomLeftRelationLine {
   background-color: gray;
   position: absolute;
   --relation-line-length: 30px;
@@ -43,6 +45,22 @@
   left: 0;
   top: 50%;
   transform: translate(-100%, -50%);
+}
+
+.TopLeftRelationLine {
+  width: 80px;
+  height: 1px;
+  left: 50%;
+  top: calc(-1 * var(--relation-line-length));
+  transform: translate(-100%, -50%);
+}
+
+.BottomLeftRelationLine {
+  width: 1px;
+  height: 45px;
+  left: calc(-0.5 * var(--relation-line-length));
+  top: 50%;
+  transform: translate(-50%, 0);
 }
 
 .GenderBadge {

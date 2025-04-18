@@ -32,15 +32,34 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
     let x = 0;
     let y = 0;
 
-    for (const { mate } of familyTree.mates) {
+    for (const { mate, children } of familyTree.mates) {
       membersWithCoords.push({
         member: mate,
         relationLines: {
           left: true,
+          bottomLeft: children != null,
         },
         x: x + 80,
         y: 0,
       });
+
+      if (children) {
+        let dx = 40 - (children.length - 1) * 40;
+        for (let i = 0; i < children.length; i++) {
+          const child = children[i];
+          membersWithCoords.push({
+            member: child,
+            relationLines: {
+              top: true,
+              topLeft: i > 0,
+            },
+            x: x + dx,
+            y: 100,
+          });
+          dx += 80;
+        }
+      }
+
       x += 80;
     }
   }

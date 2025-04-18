@@ -9,6 +9,10 @@ interface RelationLines {
   right?: boolean;
   // Used to connect with a couple male.
   left?: boolean;
+  // Used to connect with left sibling.
+  topLeft?: boolean;
+  // Used to connect with children.
+  bottomLeft?: boolean;
 }
 
 export interface FamilyMemberProps {
@@ -22,6 +26,8 @@ export default function FamilyMember({ member, relationLines }: FamilyMemberProp
       {relationLines?.top && <div className={styles.TopRelationLine} />}
       {relationLines?.right && <div className={styles.RightRelationLine} />}
       {relationLines?.left && <div className={styles.LeftRelationLine} />}
+      {relationLines?.topLeft && <div className={styles.TopLeftRelationLine} />}
+      {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
       <Image src={member.imageSrc} alt={member.name} fill className={styles.Image} />
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
     </div>
