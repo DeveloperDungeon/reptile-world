@@ -64,7 +64,7 @@
 
 .BottomLeftRelationLine {
   width: 1px;
-  height: 45px;
+  height: 36px;
   left: calc(-0.5 * var(--relation-line-length));
   top: 50%;
   transform: translate(-50%, 0);
