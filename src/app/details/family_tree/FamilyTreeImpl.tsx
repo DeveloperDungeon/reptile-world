@@ -13,8 +13,7 @@ interface FamilyMemberDataWithCoords {
 
 export default function FamilyTreeImpl() {
   const ref = useRef<HTMLDivElement>(null);
-  const [members, setMembers] = useState<FamilyMemberDataWithCoords[]>([
-  ]);
+  const [members, setMembers] = useState<FamilyMemberDataWithCoords[]>([]);
 
   // Position family members
   useEffect(() => {

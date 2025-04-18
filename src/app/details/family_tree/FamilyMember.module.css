@@ -3,4 +3,11 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+
+  cursor: pointer;
+  transition: transform 80ms;
+}
+
+.FamilyMember:hover {
+  transform: scale(1.2);
 }
