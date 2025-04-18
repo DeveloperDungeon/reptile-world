@@ -22,7 +22,7 @@ interface Translate {
   dy: number;
 }
 
-function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[] {
+function convert(familyTree: FamilyMemberData, selectedMate: FamilyMemberData | null): FamilyMemberDataRenderingProps[] {
   const membersWithCoords: FamilyMemberDataRenderingProps[] = [
     {
       member: familyTree,
@@ -41,14 +41,14 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
         member: mate,
         relationLines: {
           left: true,
-          bottomLeft: children != null,
+          bottomLeft: mate === selectedMate && children != null,
         },
         childrenCount: children?.length,
         x: x + MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX,
         y: 0,
       });
 
-      if (children) {
+      if (mate === selectedMate && children) {
         let dx = (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2 - (children.length - 1) * (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2;
         for (let i = 0; i < children.length; i++) {
           const child = children[i];
@@ -76,6 +76,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
+  const [selectedMate, setSelectedMate] = useState<FamilyMemberData | null>(null);
 
   // Position family members
   useEffect(() => {
@@ -83,7 +84,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
       return;
     }
 
-    const members = convert(familyTree);
+    const members = convert(familyTree, selectedMate);
     setMembers(() => members);
 
     const selected = members.find((memberWithCoord) => memberWithCoord.member === familyTree);
@@ -98,7 +99,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
       dx: centerX - selected.x,
       dy: centerY - selected.y,
     });
-  }, [familyTree]);
+  }, [familyTree, selectedMate]);
 
   return (
     <div className={styles.FamilyTree} ref={ref}>
