@@ -114,7 +114,7 @@ export default function FamilyTree() {
     <div
       id='phaser-container'
       ref={parentRef}
-      style={{ width: '100%', height: '500px', overflow: 'hidden', border: '1px solid blue' }}
+      style={{ width: '100%', height: '500px', overflow: 'hidden' }}
     >
       <canvas ref={canvasRef} />
     </div>

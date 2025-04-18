@@ -4,8 +4,10 @@ import FamilyTree from './FamilyTree';
 
 export default function Content() {
   return (
-    <Module className={styles.Content} title="가계도">
-      <FamilyTree />
+    <Module title="가계도">
+      <div className={styles.FamilyTreeWrapper}>
+        <FamilyTree />
+      </div>
     </Module>
   );
 }
