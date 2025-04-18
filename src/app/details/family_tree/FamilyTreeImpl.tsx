@@ -168,7 +168,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
             member={member}
             size={MEMBER_SIZE_PX}
             isSelected={member.member.id === selectedId}
-            isChildrenCountSelected={selectedMateIds.has(member.member.id)}
+            isChildrenCountSelected={selectedMateIds?.has(member.member.id) ?? false}
             onChildrenCountSelected={() => {
               setSelectedMateIds((mateIds) => {
                 const newMateIds = new Set(mateIds);
