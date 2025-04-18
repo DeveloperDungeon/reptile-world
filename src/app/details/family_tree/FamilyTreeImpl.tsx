@@ -5,6 +5,9 @@ import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
 
+const MEMBER_SIZE_PX = 50;
+const RELATION_LINE_LENGTH_PX = 40;
+
 interface FamilyMemberDataRenderingProps extends FamilyMemberProps {
   x: number;
   y: number;
@@ -41,12 +44,12 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
           bottomLeft: children != null,
         },
         childrenCount: children?.length,
-        x: x + 80,
+        x: x + MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX,
         y: 0,
       });
 
       if (children) {
-        let dx = 40 - (children.length - 1) * 40;
+        let dx = (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2 - (children.length - 1) * (MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX) / 2;
         for (let i = 0; i < children.length; i++) {
           const child = children[i];
           membersWithCoords.push({
@@ -58,11 +61,11 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
             x: x + dx,
             y: 100,
           });
-          dx += 80;
+          dx += MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX;
         }
       }
 
-      x += 80;
+      x += MEMBER_SIZE_PX + RELATION_LINE_LENGTH_PX;
     }
   }
 
@@ -101,11 +104,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
         <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
-          <FamilyMember
-            member={member.member}
-            relationLines={member.relationLines}
-            isSelected={member.isSelected}
-            childrenCount={member.childrenCount} />
+          <FamilyMember member={member} size={MEMBER_SIZE_PX} />
         </div>
       ))}
     </div>

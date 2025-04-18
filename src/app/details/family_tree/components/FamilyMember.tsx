@@ -22,9 +22,14 @@ export interface FamilyMemberProps {
   childrenCount?: number;
 }
 
-export default function FamilyMember({ member, relationLines, isSelected, childrenCount }: FamilyMemberProps) {
+interface Props {
+  member: FamilyMemberProps;
+  size: number;
+}
+
+export default function FamilyMember({ member: { member, relationLines, isSelected, childrenCount }, size }: Props) {
   return (
-    <div className={styles.FamilyMember} style={{ width: 50, height: 50 }}>
+    <div className={styles.FamilyMember} style={{ width: size, height: size }}>
       {relationLines?.top && <div className={styles.TopRelationLine} />}
       {relationLines?.right && <div className={styles.RightRelationLine} />}
       {relationLines?.left && <div className={styles.LeftRelationLine} />}

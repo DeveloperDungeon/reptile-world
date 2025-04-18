@@ -1,7 +1,8 @@
 .FamilyMember {
   display: inline-block;
   position: relative;
-  --relation-line-length: 30px;
+  --relation-line-length: 40px;
+  --member-size: 50px;
 }
 
 .Image {
@@ -54,7 +55,7 @@
 }
 
 .TopLeftRelationLine {
-  width: 80px;
+  width: calc(var(--relation-line-length) + var(--member-size));
   height: 1px;
   left: 50%;
   top: calc(-1 * var(--relation-line-length));
