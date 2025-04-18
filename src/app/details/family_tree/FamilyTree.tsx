@@ -37,6 +37,32 @@ async function fetchFamilyTree(): Promise<FamilyMemberData> {
           name: '게코 와이프 2',
           isMale: false,
         },
+        children: [
+          {
+            imageSrc: 'https://www.wilbanksreptiles.com/cdn/shop/collections/BrowseCrestedGeckos.jpg?v=1711131817',
+            name: '게코 2-1',
+            isMale: false,
+          },
+        ],
+      },
+      {
+        mate: {
+          imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4bBWj5M_BSvAh1xXwB4v0dBG1sdyNza5GE1ZK2kxSdGfPDIYZmD4QMeYPS0fFNRMWdI&usqp=CAU',
+          name: '게코 와이프 3',
+          isMale: false,
+        },
+        children: [
+          {
+            imageSrc: 'https://i0.wp.com/badgerlandrescue.com/wp-content/uploads/ToBeSorted/360_F_61097391_ynTSjFhpcXEhJCnRE7YJyG33lvBUKCO8.jpg?resize=540%2C360&ssl=1',
+            name: '게코 3-1',
+            isMale: true,
+          },
+          {
+            imageSrc: 'https://www.reptilecentre.com/cdn/shop/articles/what_do_geckos_eat.png?v=1723822970',
+            name: '게코 3-2',
+            isMale: true,
+          },
+        ],
       },
     ],
   };
