@@ -25,6 +25,7 @@ function convert(familyTree: FamilyMemberData): FamilyMemberDataRenderingProps[]
       member: familyTree,
       x: 0,
       y: 0,
+      isSelected: true,
     },
   ];
 
@@ -99,7 +100,7 @@ export default function FamilyTreeImpl({ familyTree }: Props) {
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member, i) => (
         <div key={'family-member-' + i} style={{ position: 'absolute', left: member.x + translate.dx, top: member.y + translate.dy }}>
-          <FamilyMember member={member.member} relationLines={member.relationLines} />
+          <FamilyMember member={member.member} relationLines={member.relationLines} isSelected={member.isSelected} />
         </div>
       ))}
     </div>
