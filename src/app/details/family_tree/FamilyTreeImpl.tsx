@@ -1,5 +1,6 @@
 'use client'
 
+import useInteraction from '@/app/common/useInteraction';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
@@ -83,6 +84,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const [members, setMembers] = useState<FamilyMemberDataRenderingProps[]>([]);
   const [translate, setTranslate] = useState<Translate>({ dx: 0, dy: 0 });
   const [selectedMateIds, setSelectedMateIds] = useState<Set<string> | null>(null);
+  const interaction = useInteraction(ref);
 
   useEffect(() => {
     if (selectedMateIds == null) {
@@ -160,9 +162,9 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
       {members.map((member) => (
         <div key={'family-member-' + member.member.id} style={{
           position: 'absolute',
-          left: member.x + translate.dx,
-          top: member.y + translate.dy,
-          transition: 'left 120ms, top 120ms',
+          left: member.x + translate.dx + interaction.dx,
+          top: member.y + translate.dy + interaction.dy,
+          transition: interaction.isDragging ? 'none' : 'left 120ms, top 120ms',
         }}>
           <FamilyMember
             member={member}
