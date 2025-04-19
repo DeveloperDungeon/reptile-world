@@ -86,6 +86,8 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
   const [selectedMateIds, setSelectedMateIds] = useState<Set<string> | null>(null);
   const interaction = useInteraction(ref);
 
+  const cursorRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (selectedMateIds == null) {
       const mateIds = new Set<string>();
@@ -157,6 +159,36 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
     return find(familyTree);
   }, [familyTree]);
 
+  useEffect(() => {
+    if (ref.current == null || cursorRef.current == null) return;
+    const element = ref.current;
+    const cursor = cursorRef.current;
+
+    const onPointerMove = (e: PointerEvent) => {
+      const { x, y } = element.getBoundingClientRect();
+      cursor.style.left = (e.clientX - x) + 'px';
+      cursor.style.top = (e.clientY - y) + 'px';
+    };
+
+    const onPointerEnter = () => {
+      cursor.style.visibility = 'visible';
+    };
+
+    const onPointerLeave = () => {
+      cursor.style.visibility = 'hidden';
+    };
+
+    element.addEventListener('pointermove', onPointerMove);
+    element.addEventListener('pointerenter', onPointerEnter);
+    element.addEventListener('pointerleave', onPointerLeave);
+
+    return () => {
+      element.removeEventListener('pointermove', onPointerMove);
+      element.removeEventListener('pointerenter', onPointerEnter);
+      element.removeEventListener('pointerleave', onPointerLeave);
+    };
+  }, [ref]);
+
   return (
     <div className={styles.FamilyTree} ref={ref}>
       {members.map((member) => (
@@ -190,6 +222,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
             }} />
         </div>
       ))}
+      <div className={styles.Cursor} ref={cursorRef} style={{ visibility: 'hidden' }} />
     </div>
   );
 }

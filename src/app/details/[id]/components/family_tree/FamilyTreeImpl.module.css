@@ -5,4 +5,14 @@
   background-color: #fafafa;
   position: relative;
   touch-action: none;
+  cursor: none;
+}
+
+.Cursor {
+  width: 15px;
+  height: 15px;
+  background-color: #0004;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
 }
