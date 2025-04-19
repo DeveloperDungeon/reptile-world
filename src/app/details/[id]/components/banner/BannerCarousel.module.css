@@ -1,0 +1,37 @@
+.BannerCarousel {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 48px;
+}
+
+.BannerCarouselItem {
+  width: 80px;
+  height: 80px;
+  margin-right: 14px;
+
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  position: relative;
+
+  transition: width 120ms;
+}
+
+.BannerCarouselItem:not(.Selected) {
+  cursor: pointer;
+}
+
+.BannerCarouselItem.Selected {
+  width: 150px;
+  border: 2px solid var(--primary);
+}
+
+.BannerCarouselItemImage {
+  transition: transform 120ms;
+  object-fit: cover;
+}
+
+.BannerCarouselItem:not(.Selected) .BannerCarouselItemImage:hover {
+  transform: scale(1.15);
+}
