@@ -24,7 +24,7 @@ export default function useInteraction(element: RefObject<HTMLElement | null>) {
     setDy((dy) => dy + moveY);
     dragStartRef.current.x += moveX;
     dragStartRef.current.y += moveY;
-  }, [dx, dy]);
+  }, []);
 
   useEffect(() => {
     if (element.current == null) return;
