@@ -2,3 +2,36 @@
   /* TODO(기곤): Remove hardcoded height after implementation. */
   height: 500px;
 }
+
+.BannerContentWrapper {
+  position: relative;
+  width: calc(100% + 3rem);
+  height: 380px;
+  overflow: hidden;
+  margin: -1.5rem;
+}
+
+.BannerContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  padding: 32px 24px 24px 24px;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.7), transparent);
+}
+
+.Name {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.Species {
+  color: rgb(229 231 235);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
