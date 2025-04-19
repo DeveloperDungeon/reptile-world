@@ -94,12 +94,12 @@ export const DUMMY_ENTITIES: FamilyMemberData[] = [
   DUMMY_MALE_3,
   DUMMY_MALE_4,
   DUMMY_MALE_5,
-  DUMMY_MALE_6,
   DUMMY_FEMALE_1,
   DUMMY_FEMALE_2,
   DUMMY_FEMALE_3,
   DUMMY_FEMALE_4,
   DUMMY_FEMALE_5,
+  DUMMY_MALE_6,
 ];
 
 export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
