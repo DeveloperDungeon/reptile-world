@@ -29,18 +29,18 @@ export default function useInteraction(element: RefObject<HTMLElement | null>) {
   useEffect(() => {
     if (element.current == null) return;
 
-    element.current.addEventListener('pointerdown', onPointerDown);
-    element.current.addEventListener('pointerup', onPointerUp);
-    element.current.addEventListener('pointermove', onPointerMove);
+    const e = element.current;
+
+    e.addEventListener('pointerdown', onPointerDown);
+    e.addEventListener('pointerup', onPointerUp);
+    e.addEventListener('pointermove', onPointerMove);
 
     return () => {
-      if (element.current == null) return;
-
-      element.current.removeEventListener('pointerdown', onPointerDown);
-      element.current.removeEventListener('pointerup', onPointerUp);
-      element.current.removeEventListener('pointermove', onPointerMove);
+      e.removeEventListener('pointerdown', onPointerDown);
+      e.removeEventListener('pointerup', onPointerUp);
+      e.removeEventListener('pointermove', onPointerMove);
     };
-  }, [onPointerDown, onPointerUp, onPointerMove]);
+  }, [onPointerDown, onPointerUp, onPointerMove, element]);
 
   // dx or dy will be updated when dragStartRef is changed.
   // So it's safe to keep dragStartRef and ref.
