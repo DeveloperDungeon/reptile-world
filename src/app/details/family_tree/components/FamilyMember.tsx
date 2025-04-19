@@ -44,7 +44,7 @@ export default function FamilyMember({
       <div className={styles.TopLeftRelationLine} style={{ width: relationLines?.siblingLineLength ?? 0 }} />
       {relationLines?.bottomLeft && <div className={styles.BottomLeftRelationLine} />}
       <Link href={`/details/${member.id}`}>
-        <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} />
+        <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} priority />
       </Link>
       <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
       {childrenCount && <div

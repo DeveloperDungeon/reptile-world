@@ -16,7 +16,7 @@ export default function Breeder({ breeder }: Props) {
     <Module title='브리더'>
       <div className={styles.Breeder}>
         <div className={styles.ProfileImageWrapper}>
-          <Image src={breeder.iamgeSrc} fill alt={breeder.name} style={{ objectFit: 'cover' }} />
+          <Image src={breeder.iamgeSrc} fill alt={breeder.name} style={{ objectFit: 'cover' }} priority />
         </div>
         <div className={styles.Content}>
           <h4 className={styles.Name}>{breeder.name}</h4>
