@@ -2,6 +2,8 @@
   display: flex;
   overflow-x: auto;
   margin-top: 48px;
+  margin-bottom: -8px;
+  padding-bottom: 8px;
 }
 
 .BannerCarouselItem {
@@ -34,4 +36,13 @@
 
 .BannerCarouselItem:not(.Selected) .BannerCarouselItemImage:hover {
   transform: scale(1.15);
+}
+
+.BannerCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.BannerCarousel::-webkit-scrollbar-thumb {
+  background: #dedede;
+  border-radius: 4px;
 }
