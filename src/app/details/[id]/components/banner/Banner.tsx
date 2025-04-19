@@ -20,7 +20,7 @@ export default function Banner({ entity }: Props) {
         <Image src={entity.bannerImages[selectedIndex]} fill alt='Banner image' style={{ objectFit: 'cover' }} />
         <div className={stlyes.BannerContent}>
           <h1 className={stlyes.Name}>{entity.name}</h1>
-          <h2 className={stlyes.Species}>게코 도마뱀</h2>
+          <h2 className={stlyes.Species}>크레스티드 게코</h2>
         </div>
       </div>
       <BannerCarousel
