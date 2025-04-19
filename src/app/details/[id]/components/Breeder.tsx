@@ -13,14 +13,17 @@ interface Props {
 
 export default function Breeder({ breeder }: Props) {
   return (
-    <Module title='브리더'>
+    <Module title={`${breeder.name} 브리더`}>
       <div className={styles.Breeder}>
         <div className={styles.ProfileImageWrapper}>
           <Image src={breeder.iamgeSrc} fill alt={breeder.name} style={{ objectFit: 'cover' }} priority />
         </div>
         <div className={styles.Content}>
-          <h4 className={styles.Name}>{breeder.name}</h4>
           <p className={styles.Description}>윤리적이고 전문적인 파충류 브리더입니다.</p>
+          <ul className={styles.Facts}>
+            <li>경력: 12년</li>
+            <li>브리딩 수: 150마리</li>
+          </ul>
         </div>
       </div>
     </Module>
