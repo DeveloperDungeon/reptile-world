@@ -1,6 +1,6 @@
+import { StyledProps } from '@/app/common/props';
 import { PropsWithChildren } from 'react';
 import styles from './Module.module.css';
-import { StyledProps } from '../common/props';
 
 interface Props {
   title?: string;
