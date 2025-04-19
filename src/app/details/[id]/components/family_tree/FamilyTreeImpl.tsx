@@ -2,7 +2,7 @@
 
 import useInteraction from '@/app/common/useInteraction';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import FamilyMember, { FamilyMemberProps } from './components/FamilyMember';
+import FamilyMember, { FamilyMemberProps } from './FamilyMember';
 import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
 

@@ -1,7 +1,7 @@
-import Banner from '../Banner';
-import Breeder from '../Breeder';
-import Content from '../Content';
-import QuickStats from '../QuickStats';
+import Banner from './components/Banner';
+import Breeder from './components/Breeder';
+import Content from './components/Content';
+import QuickStats from './components/QuickStats';
 import styles from './page.module.css';
 
 export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
