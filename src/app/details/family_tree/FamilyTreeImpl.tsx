@@ -131,7 +131,7 @@ export default function FamilyTreeImpl({ familyTree, selectedId }: Props) {
       dx: ref.current.clientWidth / 2 - MEMBER_SIZE_PX / 2 - centerX,
       dy: ref.current.clientHeight / 2 - MEMBER_SIZE_PX / 2 - centerY,
     });
-  }, [familyTree, selectedMateIds]);
+  }, [familyTree, selectedId, selectedMateIds]);
 
   const getOriginalMate = useCallback((mateId: string): FamilyMemberData | null => {
     function find(entity: FamilyMemberData): FamilyMemberData | null {
