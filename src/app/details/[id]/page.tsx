@@ -1,9 +1,9 @@
-import Banner from './components/Banner';
-import Breeder from './components/Breeder';
+import Banner from './components/banner/Banner';
+import Breeder from './components/breeder/Breeder';
 import { DUMMY_ENTITIES, DUMMY_FAMILY_TREES } from './components/family_tree/dummy_family_trees';
 import FamilyMemberData from './components/family_tree/FamilyMemberData';
-import FamilyTree from './components/FamilyTree';
-import QuickStats from './components/QuickStats';
+import FamilyTree from './components/family_tree/FamilyTree';
+import QuickStats from './components/quickstats/QuickStats';
 import styles from './page.module.css';
 
 async function fetchData(id: string) {

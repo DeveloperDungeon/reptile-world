@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import stlyes from './Banner.module.css';
-import FamilyMemberData from './family_tree/FamilyMemberData';
-import Module from './Module';
+import FamilyMemberData from '../family_tree/FamilyMemberData';
+import Module from '../Module';
 
 interface Props {
   entity: FamilyMemberData & { bannerImages: string[] };

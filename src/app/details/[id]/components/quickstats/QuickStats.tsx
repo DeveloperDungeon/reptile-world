@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Module from './Module';
+import Module from '../Module';
 import styles from './QuickStats.module.css';
 import iconSize from '@/../public/icon-size.svg';
 import iconLifespan from '@/../public/icon-lifespan.svg';
