@@ -1,5 +1,4 @@
 import { redirect } from 'next/navigation';
-import Module from '../common/Module';
 import SearchOverview from './SearchOverview';
 
 interface Props {
