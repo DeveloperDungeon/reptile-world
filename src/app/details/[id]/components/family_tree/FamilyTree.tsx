@@ -1,7 +1,7 @@
 import FamilyMemberData from './FamilyMemberData';
 import FamilyTreeImpl from './FamilyTreeImpl';
 import styles from './FamilyTree.module.css';
-import Module from '../Module';
+import Module from '../../../../common/Module';
 
 interface Props {
   familyTree: FamilyMemberData;

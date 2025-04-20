@@ -1,0 +1,41 @@
+.InputBox {
+  padding: 0.5rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid rgb(209 213 219);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+}
+
+.InputBox.Focused {
+  border-color: var(--primary);
+  border-width: 2px;
+  margin: -2px;
+}
+
+.InputIcon {
+  margin-right: 8px;
+}
+
+.Input {
+  background: none;
+  border: none;
+  color: var(--on-surface);
+  line-height: 1.25rem;
+  flex-grow: 1;
+  outline: none;
+}
+
+.InputClear {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.InputClear:hover {
+  color: var(--primary);
+}
+
+.InputClear.Hidden {
+  visibility: hidden;
+}

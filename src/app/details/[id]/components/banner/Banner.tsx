@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import FamilyMemberData from '../family_tree/FamilyMemberData';
-import Module from '../Module';
+import Module from '../../../../common/Module';
 import stlyes from './Banner.module.css';
 import BannerCarousel from './BannerCarousel';
 
