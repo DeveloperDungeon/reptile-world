@@ -2,7 +2,11 @@
   position: relative;
 }
 
-.ResultsCount {}
+.ResultsCount {
+  color: rgb(107 114 128);
+  font-size: 14px;
+  margin-top: 8px;
+}
 
 @media screen and (min-width: 768px) {
   .InputBox {
