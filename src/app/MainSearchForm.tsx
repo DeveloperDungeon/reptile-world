@@ -41,7 +41,6 @@ export default function MainSearchForm() {
           placeholder="파충류 검색하기..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          required
         />
       </div>
 
