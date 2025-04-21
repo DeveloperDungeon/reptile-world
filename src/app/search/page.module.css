@@ -1,0 +1,45 @@
+.SearchResultsWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.SearchResultContentWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.Name {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.Description {
+  font-size: 14px;
+  color: rgb(75 85 99);
+  margin-bottom: 12px;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.Difficulty {
+  font-size: 14px;
+  color: rgb(75 85 99);
+}
+
+.Footer {
+  position: absolute;
+  bottom: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .SearchResultsWrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

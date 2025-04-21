@@ -1,0 +1,10 @@
+.ImageWrapper {
+  margin: -24px -24px 16px -24px;
+  width: calc(100% + 48px);
+  height: 192px;
+  position: relative;
+}
+
+.Image {
+  object-fit: cover;
+}
