@@ -6,12 +6,14 @@ import { DUMMY_ENTITIES } from '../details/[id]/components/family_tree/dummy_fam
 import Card from './Card';
 import styles from './page.module.css';
 import SearchOverview from './SearchOverview';
+import Pagination from './Pagination';
 
 const DIFFICULTY_TEXTS = ['입문', '초급', '중급', '상급', '전문가'];
 
 interface Props {
   searchParams: Promise<{
     q?: string;
+    page?: number;
   }>;
 }
 
@@ -26,12 +28,17 @@ async function fetchSearchResults(): Promise<(EntityData & {
 }
 
 export default async function SearchPage({ searchParams }: Props) {
-  const { q } = await searchParams;
-  const searchResults = await fetchSearchResults();
+  const { q, page } = await searchParams;
 
   if (q == null || q === '') {
     redirect('/');
   }
+
+  if (page == null || page === 0) {
+    redirect(`/search?q=${q}&page=1`);
+  }
+
+  const searchResults = await fetchSearchResults();
 
   return (
     <>
@@ -55,6 +62,8 @@ export default async function SearchPage({ searchParams }: Props) {
           </Card>
         ))}
       </div>
+
+      <Pagination />
     </>
   );
 }

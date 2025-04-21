@@ -1,0 +1,57 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PageInfo {
+  font-size: 14px;
+  color: rgb(107 114 128);
+}
+
+.Buttons {
+  display: flex;
+  align-items: center;
+}
+
+.Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgb(209 213 219);
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  color: rgb(55 65 81);
+}
+
+.Button:not(.Disabled):not(.Selected):hover {
+  background-color: rgb(249 250 251);
+  cursor: pointer;
+}
+
+.Disabled {
+  color: rgb(209 213 219);
+}
+
+.Selected {
+  background-color: rgb(44 122 8);
+  color: white;
+}
+
+.Left {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+
+.Right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.Number {
+  border-left: none;
+  border-right: none;
+}
