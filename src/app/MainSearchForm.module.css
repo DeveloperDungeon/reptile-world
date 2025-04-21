@@ -1,0 +1,58 @@
+.Form {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto 4rem auto;
+}
+
+.InputContainer {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.SearchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.SearchInput {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  padding-left: 3rem;
+  font-size: 1.125rem;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background-color: var(--background);
+  color: #6b7280;
+}
+
+.SearchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--primary-hover);
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.SearchButton {
+  padding: 0.75rem 1.5rem;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.SearchButton:hover {
+  background-color: var(--primary-hover);
+}
