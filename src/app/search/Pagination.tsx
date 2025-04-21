@@ -10,10 +10,11 @@ import styles from './Pagination.module.css';
 interface Props {
   currentPage: number;
   totalPages: number;
+  pageWindowSize: number;
 }
 
-export default function Pagination({ currentPage, totalPages }: Props) {
-  const [displayPages, setDisplayPages] = useState<number[]>(new Array(totalPages).fill(0).map((_, i) => i + 1));
+export default function Pagination({ currentPage, totalPages, pageWindowSize }: Props) {
+  const [displayPages, setDisplayPages] = useState<number[]>(new Array(Math.min(totalPages, pageWindowSize)).fill(0).map((_, i) => i + 1));
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -24,11 +25,36 @@ export default function Pagination({ currentPage, totalPages }: Props) {
     return `${pathname}?${params.toString()}`;
   };
 
+  function newPageWindowFrom(startPage: number) {
+    const newPageWindow = [];
+    for (let i = 0; i < pageWindowSize && startPage + i <= totalPages; i++) {
+      newPageWindow.push(startPage + i);
+    }
+    setDisplayPages(newPageWindow);
+  }
+
+  function prevPageWindow() {
+    if (displayPages.includes(1)) return;
+
+    newPageWindowFrom(Math.max(displayPages[0] - 5, 1));
+  }
+
+  function nextPageWindow() {
+    if (displayPages.includes(totalPages)) return;
+
+    newPageWindowFrom(Math.min(displayPages[displayPages.length - 1] + 1, totalPages - 4));
+  }
+
   return (
     <Module className={styles.Pagination}>
       <div className={styles.PageInfo}>Showing 1-8 of 24 results</div>
       <div className={styles.Buttons}>
-        <MdChevronLeft className={styles.Left + ' ' + styles.Button + ' ' + styles.Disabled} />
+        <MdChevronLeft
+          className={
+            styles.Left + ' ' + styles.Button +
+            (displayPages.includes(1) ? ' ' + styles.Disabled : '')
+          }
+          onClick={prevPageWindow} />
         {displayPages.map((page) => (
           <Link
             key={`page-${page}`}
@@ -40,7 +66,12 @@ export default function Pagination({ currentPage, totalPages }: Props) {
             {page}
           </Link>
         ))}
-        <MdChevronRight className={styles.Right + ' ' + styles.Button} />
+        <MdChevronRight
+          className={
+            styles.Right + ' ' + styles.Button +
+            (displayPages.includes(totalPages) ? ' ' + styles.Disabled : '')
+          }
+          onClick={nextPageWindow} />
       </div>
     </Module>
   );
