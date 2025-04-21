@@ -3,6 +3,9 @@ import Card from './Card';
 import styles from './page.module.css';
 import SearchOverview from './SearchOverview';
 import Link from 'next/link';
+import { FaStar } from 'react-icons/fa';
+
+const DIFFICULTY_TEXTS = ['입문', '초급', '중급', '상급', '전문가'];
 
 interface Props {
   searchParams: Promise<{
@@ -135,7 +138,9 @@ export default async function SearchPage({ searchParams }: Props) {
               <h3 className={styles.Name}>{entity.name}</h3>
               <p className={styles.Description}>{entity.description}</p>
               <div className={styles.Footer}>
-                <div className={styles.Difficulty}>사육 난이도: {entity.difficulty}</div>
+                <div className={styles.Difficulty}>
+                  <FaStar className={styles.DifficultyIcon} />{DIFFICULTY_TEXTS[entity.difficulty - 1]}
+                </div>
                 <Link href={`/details/${entity.id}`} className={styles.Link}>자세히 보기</Link>
               </div>
             </div>

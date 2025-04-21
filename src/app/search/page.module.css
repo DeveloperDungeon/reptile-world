@@ -35,6 +35,13 @@
 .Difficulty {
   font-size: 14px;
   color: rgb(75 85 99);
+  display: flex;
+  align-items: center;
+}
+
+.DifficultyIcon {
+  color: rgb(234 179 8);
+  margin-right: 4px;
 }
 
 .Link {
