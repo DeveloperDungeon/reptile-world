@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.textContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--on-background);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: rgb(75, 85, 99);
+  font-size: 1.125rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 4rem 1rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}
