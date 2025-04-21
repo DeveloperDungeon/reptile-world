@@ -1,4 +1,4 @@
-import FamilyMemberData from './FamilyMemberData';
+import FamilyMemberData from '@/app/data/FamilyMemberData';
 
 export const DUMMY_MALE_1: FamilyMemberData = {
   id: '1',

@@ -1,9 +1,9 @@
 'use client'
 
 import useInteraction from '@/app/common/useInteraction';
+import FamilyMemberData from '@/app/data/FamilyMemberData';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import FamilyMember, { FamilyMemberProps } from './FamilyMember';
-import FamilyMemberData from './FamilyMemberData';
 import styles from './FamilyTreeImpl.module.css';
 
 const MEMBER_SIZE_PX = 50;

@@ -1,7 +1,7 @@
+import FamilyMemberData from '@/app/data/FamilyMemberData';
 import Image from 'next/image';
-import FamilyMemberData from './FamilyMemberData';
-import styles from './FamilyMember.module.css';
 import Link from 'next/link';
+import styles from './FamilyMember.module.css';
 
 interface RelationLines {
   // Used to connect with parents.

@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { FaStar } from 'react-icons/fa';
+import EntityData from '../data/EntityData';
 import Card from './Card';
 import styles from './page.module.css';
 import SearchOverview from './SearchOverview';
-import Link from 'next/link';
-import { FaStar } from 'react-icons/fa';
 
 const DIFFICULTY_TEXTS = ['입문', '초급', '중급', '상급', '전문가'];
 
@@ -13,10 +14,12 @@ interface Props {
   }>;
 }
 
-async function fetchSearchResults() {
+async function fetchSearchResults(): Promise<(EntityData & {
+  difficulty: number,
+})[]> {
   return [
     {
-      id: 1,
+      id: '1',
       name: '게코 수컷 1',
       species: '크레스티드 게코',
       gender: 'MALE',
@@ -25,7 +28,7 @@ async function fetchSearchResults() {
       difficulty: 1,
     },
     {
-      id: 2,
+      id: '2',
       name: '게코 수컷 2',
       species: '크레스티드 게코',
       gender: 'MALE',
@@ -34,7 +37,7 @@ async function fetchSearchResults() {
       difficulty: 1,
     },
     {
-      id: 3,
+      id: '3',
       name: '게코 수컷 3',
       species: '크레스티드 게코',
       gender: 'MALE',
@@ -43,7 +46,7 @@ async function fetchSearchResults() {
       difficulty: 2,
     },
     {
-      id: 4,
+      id: '4',
       name: '게코 수컷 4',
       species: '크레스티드 게코',
       gender: 'MALE',
@@ -52,7 +55,7 @@ async function fetchSearchResults() {
       difficulty: 4,
     },
     {
-      id: 5,
+      id: '5',
       name: '게코 수컷 5',
       species: '크레스티드 게코',
       gender: 'MALE',
@@ -61,7 +64,7 @@ async function fetchSearchResults() {
       difficulty: 4,
     },
     {
-      id: 6,
+      id: '6',
       name: '게코 암컷 1',
       species: '크레스티드 게코',
       gender: 'FEMALE',
@@ -70,7 +73,7 @@ async function fetchSearchResults() {
       difficulty: 1,
     },
     {
-      id: 7,
+      id: '7',
       name: '게코 암컷 2',
       species: '크레스티드 게코',
       gender: 'FEMALE',
@@ -79,7 +82,7 @@ async function fetchSearchResults() {
       difficulty: 2,
     },
     {
-      id: 8,
+      id: '8',
       name: '게코 암컷 3',
       species: '크레스티드 게코',
       gender: 'FEMALE',
@@ -88,7 +91,7 @@ async function fetchSearchResults() {
       difficulty: 3,
     },
     {
-      id: 9,
+      id: '9',
       name: '게코 암컷 4',
       species: '크레스티드 게코',
       gender: 'FEMALE',
@@ -97,7 +100,7 @@ async function fetchSearchResults() {
       difficulty: 5,
     },
     {
-      id: 10,
+      id: '10',
       name: '게코 암컷 5',
       species: '크레스티드 게코',
       gender: 'FEMALE',
@@ -106,7 +109,7 @@ async function fetchSearchResults() {
       difficulty: 1,
     },
     {
-      id: 11,
+      id: '11',
       name: '게코 수컷 6',
       species: '크레스티드 게코',
       gender: 'MALE',
