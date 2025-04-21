@@ -38,6 +38,7 @@
 .Selected {
   background-color: rgb(44 122 8);
   color: white;
+  pointer-events: none;
 }
 
 .Left {

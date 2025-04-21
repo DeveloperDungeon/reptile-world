@@ -5,15 +5,15 @@ import EntityData from '../data/EntityData';
 import { DUMMY_ENTITIES } from '../details/[id]/components/family_tree/dummy_family_trees';
 import Card from './Card';
 import styles from './page.module.css';
-import SearchOverview from './SearchOverview';
 import Pagination from './Pagination';
+import SearchOverview from './SearchOverview';
 
 const DIFFICULTY_TEXTS = ['입문', '초급', '중급', '상급', '전문가'];
 
 interface Props {
   searchParams: Promise<{
     q?: string;
-    page?: number;
+    page?: string;
   }>;
 }
 
@@ -28,14 +28,19 @@ async function fetchSearchResults(): Promise<(EntityData & {
 }
 
 export default async function SearchPage({ searchParams }: Props) {
-  const { q, page } = await searchParams;
+  const { q, page: pageString } = await searchParams;
 
   if (q == null || q === '') {
     redirect('/');
   }
 
-  if (page == null || page === 0) {
-    redirect(`/search?q=${q}&page=1`);
+  if (pageString == null) {
+    redirect(`/search?q=${encodeURIComponent(q)}&page=1`);
+  }
+
+  const page = parseInt(pageString, 10);
+  if (isNaN(page) || page <= 0) {
+    redirect(`/search?q=${encodeURIComponent(q)}&page=1`);
   }
 
   const searchResults = await fetchSearchResults();
@@ -63,7 +68,7 @@ export default async function SearchPage({ searchParams }: Props) {
         ))}
       </div>
 
-      <Pagination />
+      <Pagination currentPage={page} totalPages={3} />
     </>
   );
 }
