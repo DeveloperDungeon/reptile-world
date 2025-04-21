@@ -23,14 +23,23 @@
   margin-bottom: 24px;
 }
 
+.Footer {
+  position: absolute;
+  bottom: 14px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .Difficulty {
   font-size: 14px;
   color: rgb(75 85 99);
 }
 
-.Footer {
-  position: absolute;
-  bottom: 14px;
+.Link {
+  font-size: 14px;
+  color: var(--primary);
 }
 
 @media screen and (min-width: 1024px) {

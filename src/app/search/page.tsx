@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import Card from './Card';
 import styles from './page.module.css';
 import SearchOverview from './SearchOverview';
+import Link from 'next/link';
 
 interface Props {
   searchParams: Promise<{
@@ -135,6 +136,7 @@ export default async function SearchPage({ searchParams }: Props) {
               <p className={styles.Description}>{entity.description}</p>
               <div className={styles.Footer}>
                 <div className={styles.Difficulty}>사육 난이도: {entity.difficulty}</div>
+                <Link href={`/details/${entity.id}`} className={styles.Link}>자세히 보기</Link>
               </div>
             </div>
           </Card>
