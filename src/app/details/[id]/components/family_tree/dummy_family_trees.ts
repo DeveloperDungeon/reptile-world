@@ -47,7 +47,7 @@ export const DUMMY_MALE_4: FamilyMemberData = {
 export const DUMMY_MALE_5: FamilyMemberData = {
   id: '5',
   imageSrc:
-    'https://www.reptilecentre.com/cdn/shop/articles/what_do_geckos_eat.png?v=1723822970',
+    'https://www.zillarules.com/-/media/project/oneweb/zilla/images/blog-articles/6-types-of-pet-geckos/crested-gecko.jpg',
   name: '게코 수컷 5',
   gender: 'MALE',
   species: '크레스티드 게코',
