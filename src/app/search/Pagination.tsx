@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function Pagination({ currentPage, totalPages, pageWindowSize }: Props) {
-  const [displayPages, setDisplayPages] = useState<number[]>(new Array(Math.min(totalPages, pageWindowSize)).fill(0).map((_, i) => i + 1));
+  const [displayPages, setDisplayPages] = useState<number[]>(newPageWindowFrom(currentPage - Math.floor(pageWindowSize / 2)));
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -26,23 +26,30 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize }: 
   };
 
   function newPageWindowFrom(startPage: number) {
+    if (startPage < 1) {
+      startPage = 1;
+    }
+    if (startPage > totalPages - pageWindowSize + 1) {
+      startPage = totalPages - pageWindowSize + 1;
+    }
+
     const newPageWindow = [];
     for (let i = 0; i < pageWindowSize && startPage + i <= totalPages; i++) {
       newPageWindow.push(startPage + i);
     }
-    setDisplayPages(newPageWindow);
+    return newPageWindow;
   }
 
   function prevPageWindow() {
     if (displayPages.includes(1)) return;
 
-    newPageWindowFrom(Math.max(displayPages[0] - 5, 1));
+    setDisplayPages(newPageWindowFrom(displayPages[0] - pageWindowSize));
   }
 
   function nextPageWindow() {
     if (displayPages.includes(totalPages)) return;
 
-    newPageWindowFrom(Math.min(displayPages[displayPages.length - 1] + 1, totalPages - 4));
+    setDisplayPages(newPageWindowFrom(displayPages[displayPages.length - 1] + 1));
   }
 
   return (
