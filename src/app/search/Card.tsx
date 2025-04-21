@@ -9,7 +9,7 @@ interface Props {
 
 export default function Card({ children, image }: PropsWithChildren<Props>) {
   return (
-    <Module>
+    <Module floatOnHover>
       {image && <>
         <div className={styles.ImageWrapper}>
           <Image src={image} fill alt='' className={styles.Image} />
