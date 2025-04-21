@@ -46,7 +46,11 @@ export default function FamilyMember({
       <Link href={`/details/${member.id}`}>
         <Image src={member.imageSrc} alt={member.name} fill className={styles.Image + (isSelected ? ' ' + styles.Selected : '')} priority />
       </Link>
-      <div className={styles.GenderBadge + ' ' + (member.isMale ? styles.Male : styles.Female)}>{member.isMale ? '♂' : '♀'}</div>
+      <div
+        className={styles.GenderBadge + ' ' +
+          (member.gender === 'MALE' ? styles.Male : styles.Female)}>
+        {member.gender === 'MALE' ? '♂' : '♀'}
+      </div>
       {childrenCount && <div
         className={styles.ChildrenCount + (isChildrenCountSelected ? ' ' + styles.Selected : '')}
         onClick={onChildrenCountSelected}>

@@ -5,7 +5,7 @@ export const DUMMY_MALE_1: FamilyMemberData = {
   imageSrc:
     'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgwy1dOJa3-jpTfRxBmXG6-u-R8IzkG_AGlKLgesk_M2I1i3K4FMA0ZWqAI5HUpZXtqmG2hhfooARUr7r8wa--VA',
   name: '게코 수컷 1',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_MALE_2: FamilyMemberData = {
@@ -13,7 +13,7 @@ export const DUMMY_MALE_2: FamilyMemberData = {
   imageSrc:
     'https://zooboise.org/wp-content/uploads/2024/05/2024-Crested-gecko-block.png',
   name: '게코 수컷 2',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_MALE_3: FamilyMemberData = {
@@ -21,7 +21,7 @@ export const DUMMY_MALE_3: FamilyMemberData = {
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3u6sJjAXFVCMI-2ye5DUo0eG8JjyrnvSsTsSzXbLSc8hH6Exs8RNFtQZlhSKcS-jP04c&usqp=CAU',
   name: '게코 수컷 3',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_MALE_4: FamilyMemberData = {
@@ -29,7 +29,7 @@ export const DUMMY_MALE_4: FamilyMemberData = {
   imageSrc:
     'https://i0.wp.com/badgerlandrescue.com/wp-content/uploads/ToBeSorted/360_F_61097391_ynTSjFhpcXEhJCnRE7YJyG33lvBUKCO8.jpg?resize=540%2C360&ssl=1',
   name: '게코 수컷 4',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_MALE_5: FamilyMemberData = {
@@ -37,7 +37,7 @@ export const DUMMY_MALE_5: FamilyMemberData = {
   imageSrc:
     'https://www.reptilecentre.com/cdn/shop/articles/what_do_geckos_eat.png?v=1723822970',
   name: '게코 수컷 5',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_MALE_6: FamilyMemberData = {
@@ -45,7 +45,7 @@ export const DUMMY_MALE_6: FamilyMemberData = {
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDRi2eZVNfazn4JZezD2w5unH6eQbLmGpssgc9FiLWDCvOPaF_qc9YCf_YdVKwqTCuf0&usqp=CAU',
   name: '게코 수컷 6',
-  isMale: true,
+  gender: 'MALE',
 };
 
 export const DUMMY_FEMALE_1: FamilyMemberData = {
@@ -53,7 +53,7 @@ export const DUMMY_FEMALE_1: FamilyMemberData = {
   imageSrc:
     'https://jonathansjungleroadshow.co.uk/wp-content/uploads/2020/07/crestedgeckos5.jpg',
   name: '게코 암컷 1',
-  isMale: false,
+  gender: 'FEMALE',
 };
 
 export const DUMMY_FEMALE_2: FamilyMemberData = {
@@ -61,7 +61,7 @@ export const DUMMY_FEMALE_2: FamilyMemberData = {
   imageSrc:
     'https://www.reptiles.swelluk.com/media/catalog/product/c/r/crested_gecko_correlophus_ciliatus.jpg?width=810&height=810&store=swell_reptiles_store_view&image-type=image',
   name: '게코 암컷 2',
-  isMale: false,
+  gender: 'FEMALE',
 };
 
 export const DUMMY_FEMALE_3: FamilyMemberData = {
@@ -69,7 +69,7 @@ export const DUMMY_FEMALE_3: FamilyMemberData = {
   imageSrc:
     'https://www.reptilecentre.com/cdn/shop/articles/what_do_geckos_eat.png?v=1723822970',
   name: '게코 암컷 3',
-  isMale: false,
+  gender: 'FEMALE',
 };
 
 export const DUMMY_FEMALE_4: FamilyMemberData = {
@@ -77,7 +77,7 @@ export const DUMMY_FEMALE_4: FamilyMemberData = {
   imageSrc:
     'https://www.wilbanksreptiles.com/cdn/shop/collections/BrowseCrestedGeckos.jpg?v=1711131817',
   name: '게코 암컷 4',
-  isMale: false,
+  gender: 'FEMALE',
 };
 
 export const DUMMY_FEMALE_5: FamilyMemberData = {
@@ -85,7 +85,7 @@ export const DUMMY_FEMALE_5: FamilyMemberData = {
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4bBWj5M_BSvAh1xXwB4v0dBG1sdyNza5GE1ZK2kxSdGfPDIYZmD4QMeYPS0fFNRMWdI&usqp=CAU',
   name: '게코 암컷 5',
-  isMale: false,
+  gender: 'FEMALE',
 };
 
 export const DUMMY_ENTITIES: FamilyMemberData[] = [

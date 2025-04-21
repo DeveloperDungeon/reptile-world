@@ -2,7 +2,7 @@ export default interface FamilyMemberData {
   id: string;
 
   name: string;
-  isMale: boolean;
+  gender: string;
   imageSrc: string;
 
   mates?: {
