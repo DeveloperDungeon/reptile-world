@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.Title {
+  margin-bottom: 14px;
+}
+
 .ResultsCount {
   color: rgb(107 114 128);
   font-size: 14px;
