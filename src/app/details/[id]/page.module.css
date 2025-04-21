@@ -10,8 +10,7 @@
   color: var(--on-surface);
 }
 
-.Breeder,
-.QuickStats {
+.Breeder {
   margin-bottom: 32px;
 }
 
