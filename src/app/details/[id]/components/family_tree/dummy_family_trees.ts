@@ -55,17 +55,6 @@ export const DUMMY_MALE_5: FamilyMemberData = {
     '타고 오르거나 숨을 수 있는 충분한 식물이 있는 수직형 테라리움이 필요합니다. 습도 관리에 신경 써야 합니다.',
 };
 
-export const DUMMY_MALE_6: FamilyMemberData = {
-  id: '11',
-  imageSrc:
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDRi2eZVNfazn4JZezD2w5unH6eQbLmGpssgc9FiLWDCvOPaF_qc9YCf_YdVKwqTCuf0&usqp=CAU',
-  name: '게코 수컷 6',
-  gender: 'MALE',
-  species: '크레스티드 게코',
-  description:
-    '튼튼하고 건강한 크레스티드 게코 수컷입니다. 적절한 환경만 갖춰주면 키우기 어렵지 않습니다.',
-};
-
 export const DUMMY_FEMALE_1: FamilyMemberData = {
   id: '6',
   imageSrc:
@@ -121,6 +110,17 @@ export const DUMMY_FEMALE_5: FamilyMemberData = {
     '아름다운 외모를 가진 크레스티드 게코 암컷입니다. 야행성으로, 저녁 시간에 활동하는 모습을 관찰할 수 있습니다.',
 };
 
+export const DUMMY_UNKNOWN_1: FamilyMemberData = {
+  id: '11',
+  imageSrc:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDRi2eZVNfazn4JZezD2w5unH6eQbLmGpssgc9FiLWDCvOPaF_qc9YCf_YdVKwqTCuf0&usqp=CAU',
+  name: '게코 6',
+  gender: 'UNKNOWN',
+  species: '크레스티드 게코',
+  description:
+    '튼튼하고 건강한 크레스티드 게코입니다. 적절한 환경만 갖춰주면 키우기 어렵지 않습니다. 아직 어려 성별이 특정되지 않았습니다.',
+};
+
 export const DUMMY_ENTITIES: FamilyMemberData[] = [
   DUMMY_MALE_1,
   DUMMY_MALE_2,
@@ -132,7 +132,7 @@ export const DUMMY_ENTITIES: FamilyMemberData[] = [
   DUMMY_FEMALE_3,
   DUMMY_FEMALE_4,
   DUMMY_FEMALE_5,
-  DUMMY_MALE_6,
+  DUMMY_UNKNOWN_1,
 ];
 
 export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
@@ -149,7 +149,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -188,7 +188,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -217,7 +217,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -246,7 +246,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -275,7 +275,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
@@ -307,7 +307,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
     mates: [
       {
         mate: DUMMY_MALE_3,
-        children: [DUMMY_MALE_4, DUMMY_MALE_6],
+        children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
       },
     ],
   },
@@ -343,7 +343,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
             mates: [
               {
                 mate: DUMMY_FEMALE_3,
-                children: [DUMMY_MALE_4, DUMMY_MALE_6],
+                children: [DUMMY_MALE_4, DUMMY_UNKNOWN_1],
               },
               {
                 mate: DUMMY_FEMALE_4,
