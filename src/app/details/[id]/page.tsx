@@ -1,3 +1,4 @@
+import Module from '@/app/common/Module';
 import Banner from './components/banner/Banner';
 import Breeder from './components/breeder/Breeder';
 import { DUMMY_ENTITIES, DUMMY_FAMILY_TREES } from './components/family_tree/dummy_family_trees';
@@ -46,6 +47,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
           </div>
         </div>
         <div className={styles.Content}>
+          <Module className={styles.Description}>{entity.description}</Module>
           <FamilyTree familyTree={familyTree} selectedId={id} />
         </div>
       </div>

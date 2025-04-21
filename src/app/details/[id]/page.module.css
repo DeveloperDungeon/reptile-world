@@ -5,6 +5,11 @@
   margin-top: 2rem;
 }
 
+.Description {
+  margin-bottom: 32px;
+  color: var(--on-surface);
+}
+
 .Breeder,
 .QuickStats {
   margin-bottom: 32px;

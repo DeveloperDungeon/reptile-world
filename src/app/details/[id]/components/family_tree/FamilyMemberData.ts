@@ -4,6 +4,7 @@ export default interface FamilyMemberData {
   name: string;
   gender: string;
   imageSrc: string;
+  description: string;
 
   mates?: {
     mate: FamilyMemberData;
