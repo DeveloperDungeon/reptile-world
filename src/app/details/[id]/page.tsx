@@ -1,4 +1,5 @@
 import Module from '@/app/common/Module';
+import BreederData from '@/app/data/BreederData';
 import EntityData from '@/app/data/EntityData';
 import FamilyMemberData from '@/app/data/FamilyMemberData';
 import Banner from './components/banner/Banner';
@@ -11,6 +12,7 @@ import styles from './page.module.css';
 async function fetchData(id: string): Promise<{
   entity: EntityData,
   bannerImages: string[],
+  breeder: BreederData,
   familyTree: FamilyMemberData,
 }> {
   const idNumber = Number(id) - 1;
@@ -28,13 +30,23 @@ async function fetchData(id: string): Promise<{
       'https://readdy.ai/api/search-image?query=A%2520professional%2520photograph%2520of%2520a%2520bearded%2520dragon%2520eating%2520insects%2520from%2520a%2520feeding%2520dish.%2520The%2520image%2520clearly%2520shows%2520the%2520lizards%2520feeding%2520behavior%2520with%2520its%2520mouth%2520open%2C%2520capturing%2520the%2520moment%2520it%2520consumes%2520its%2520prey.%2520The%2520lighting%2520is%2520bright%2520and%2520clear%2C%2520highlighting%2520the%2520natural%2520feeding%2520process%2520of%2520this%2520reptile%2520species.&width=400&height=400&seq=104&orientation=squarish',
       'https://readdy.ai/api/search-image?query=A%2520professional%2520photograph%2520of%2520a%2520person%2520gently%2520handling%2520a%2520bearded%2520dragon%2C%2520demonstrating%2520proper%2520reptile%2520handling%2520technique.%2520The%2520lizard%2520appears%2520calm%2520and%2520comfortable%2C%2520resting%2520on%2520the%2520persons%2520palm%2520with%2520support%2520under%2520its%2520body.%2520The%2520image%2520shows%2520the%2520bond%2520between%2520owner%2520and%2520pet%2C%2520with%2520natural%2520lighting%2520highlighting%2520both%2520the%2520human%2520and%2520reptile%2520subject.&width=400&height=400&seq=105&orientation=squarish',
     ],
+    breeder: {
+      id: '1',
+      name: '이하윤',
+      imageSrc: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740',
+      description: '윤리적이고 전문적인 파충류 브리더입니다.',
+      facts: [
+        { fact: '경력', value: '12년' },
+        { fact: '브리딩 수', value: '150마리' },
+      ],
+    },
     familyTree,
   };
 }
 
 export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const { entity, bannerImages, familyTree } = await fetchData(id);
+  const { entity, bannerImages, breeder, familyTree } = await fetchData(id);
 
   return (
     <>
@@ -42,7 +54,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
       <div className={styles.Body}>
         <div className={styles.Lhs}>
           <div className={styles.Breeder}>
-            <Breeder breeder={{ name: '이하윤', iamgeSrc: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740' }} />
+            <Breeder breeder={breeder} />
           </div>
           <div className={styles.QuickStats}>
             <QuickStats />
