@@ -24,6 +24,11 @@
   height: 36px;
   padding: 8px;
   color: rgb(55 65 81);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .Button:not(.Disabled):not(.Selected):hover {
