@@ -2,11 +2,10 @@
   box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
   padding: 1rem 1.5rem;
   background-color: var(--surface);
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
   color: rgb(75, 85, 99);
+  position: relative;
 }
 
 .Logo {
@@ -56,4 +55,15 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .Header {
+    grid-template-columns: 1fr auto;
+  }
+  
+  .Navigation, 
+  .Action {
+    display: none;
+  }
 }
