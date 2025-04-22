@@ -22,84 +22,83 @@ export default function Footer() {
                   src={logo}
                   width={42}
                   height={42}
-                  alt="logo"
+                  alt="로고"
                   className={styles.Logo}
                 />
               </h2>
               <span className={styles.BrandText}>Reptile World</span>
             </div>
             <p className={styles.Description}>
-              Your ultimate resource for reptile information, care guides, and
-              species discovery.
+              파충류 정보, 관리 가이드, 종 탐색을 위한 최고의 리소스입니다.
             </p>
           </div>
           <div className={styles.Grid}>
             <div className={styles.GridColumn}>
-              <h3 className={styles.SectionTitle}>Explore</h3>
+              <h3 className={styles.SectionTitle}>탐색하기</h3>
               <ul className={styles.LinkList}>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Species
+                    종 목록
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Care Guides
+                    관리 가이드
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Community
+                    커뮤니티
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Events
+                    이벤트
                   </Link>
                 </li>
               </ul>
             </div>
             <div className={styles.GridColumn}>
-              <h3 className={styles.SectionTitle}>Company</h3>
+              <h3 className={styles.SectionTitle}>회사</h3>
               <ul className={styles.LinkList}>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    About Us
+                    회사 소개
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Contact
+                    연락처
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Careers
+                    채용 정보
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Press
+                    보도자료
                   </Link>
                 </li>
               </ul>
             </div>
             <div className={styles.GridColumn}>
-              <h3 className={styles.SectionTitle}>Legal</h3>
+              <h3 className={styles.SectionTitle}>법적 고지</h3>
               <ul className={styles.LinkList}>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Terms of Service
+                    서비스 이용 약관
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Privacy Policy
+                    개인정보 처리방침
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className={styles.Link}>
-                    Cookie Policy
+                    쿠키 정책
                   </Link>
                 </li>
               </ul>
@@ -108,7 +107,7 @@ export default function Footer() {
         </div>
         <div className={styles.Divider}>
           <p className={styles.Copyright}>
-            © 2025 Reptile World. All rights reserved.
+            © 2025 Reptile World. 모든 권리 보유.
           </p>
           <div className={styles.SocialIcons}>
             <Link href="#" className={styles.SocialIcon}>
