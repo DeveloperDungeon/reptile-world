@@ -43,12 +43,6 @@ export default function MainSearchForm() {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
-
-      <div className={styles.ButtonContainer}>
-        <button type="submit" className={styles.SearchButton}>
-          파충류 검색
-        </button>
-      </div>
     </form>
   );
 }
