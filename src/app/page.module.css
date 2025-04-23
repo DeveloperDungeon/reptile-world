@@ -1,38 +1,69 @@
-.Container {
+.Banner {
+  position: relative;
+  background-color: black;
+  height: 500px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: -4rem;
+
+  --image-width: 600px;
+}
+
+.ImageWrapper {
+  width: var(--image-width);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.Image {
+  object-fit: cover;
+  object-position: left;
+}
+
+.BannerContent {
+  position: absolute;
+  left: 0;
+  padding: 48px;
+  top: 0;
+  bottom: 0;
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 3rem 1rem;
+  max-width: calc(100vw - var(--image-width));
 }
 
 .TextContainer {
-  text-align: center;
+  text-align: left;
   margin-bottom: 3rem;
 }
 
 .Heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: var(--on-background);
+  color: white;
   margin-bottom: 1rem;
 }
 
 .Description {
-  color: rgb(75, 85, 99);
+  color: white;
   font-size: 1.125rem;
   max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-@media (min-width: 768px) {
-  .Container {
-    padding: 4rem 1rem;
+@media screen and (max-width: 1080px) {
+  .BannerContent {
+    right: 0;
+    max-width: none;
+    background: linear-gradient(to bottom, black, transparent);
   }
+}
 
-  .Heading {
-    font-size: 3rem;
+@media screen and (max-width: 600px) {
+  .ImageWrapper {
+    left: 0;
+    right: none;
   }
 }

@@ -1,7 +1,5 @@
 .Form {
   width: 100%;
-  max-width: 42rem;
-  margin: 0 auto 4rem auto;
 }
 
 .InputContainer {
@@ -37,7 +35,7 @@
 
 .ButtonContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .SearchButton {
