@@ -21,8 +21,8 @@ export type SearchEntityData = EntityData & {
   },
 };
 
-async function fetchSearchResults(): Promise<SearchEntityData[]> {
-  return getDummySearch();
+async function fetchSearchResults(q: string): Promise<SearchEntityData[]> {
+  return getDummySearch().filter((entity) => entity.name.includes(q));
 }
 
 export default async function SearchPage({ searchParams }: Props) {
@@ -41,7 +41,7 @@ export default async function SearchPage({ searchParams }: Props) {
     redirect(`/search?q=${encodeURIComponent(q)}&page=1`);
   }
 
-  const searchResults = await fetchSearchResults();
+  const searchResults = await fetchSearchResults(q);
 
   return (
     <>
