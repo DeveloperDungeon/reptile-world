@@ -9,39 +9,39 @@ function DropdownMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prev => !prev);
   };
 
   return (
-    <React.Fragment>
-      <div className={styles.MobileMenuButton} onClick={toggleMenu}>
+    <>
+      <div className={styles.MenuButton} onClick={toggleMenu}>
         <RiMenuLine size={24} />
       </div>
       {isMenuOpen && (
-        <div className={styles.MobileMenu}>
-          <Link href="/" className={styles.MobileLink}>
+        <div className={styles.Menu}>
+          <Link href="/" className={styles.Link}>
             Home
           </Link>
-          <Link href="#" className={styles.MobileLink}>
+          <Link href="#" className={styles.Link}>
             About
           </Link>
-          <Link href="#" className={styles.MobileLink}>
+          <Link href="#" className={styles.Link}>
             Species
           </Link>
-          <Link href="#" className={styles.MobileLink}>
+          <Link href="#" className={styles.Link}>
             Contact
           </Link>
-          <div className={styles.MobileActions}>
-            <Link href="#" className={styles.MobileLink}>
+          <div className={styles.Actions}>
+            <Link href="#" className={styles.Link}>
               Sign In
             </Link>
-            <Link href="#" className={styles.MobileFilledLink}>
+            <Link href="#" className={styles.FilledLink}>
               Sign Up
             </Link>
           </div>
         </div>
       )}
-    </React.Fragment>
+    </>
   );
 }
 
