@@ -21,6 +21,8 @@ export type SearchEntityData = EntityData & {
   },
 };
 
+const RESULTS_SIZE_PER_PAGE = 8;
+
 async function fetchSearchResults(q: string): Promise<SearchEntityData[]> {
   return getDummySearch().filter((entity) => entity.name.includes(q));
 }
@@ -42,13 +44,16 @@ export default async function SearchPage({ searchParams }: Props) {
   }
 
   const searchResults = await fetchSearchResults(q);
+  const totalResults = searchResults.length;
+  const totalPages = Math.max(1, Math.ceil(totalResults / RESULTS_SIZE_PER_PAGE));
+  const paginatedResults = searchResults.slice((page - 1) * RESULTS_SIZE_PER_PAGE, page * RESULTS_SIZE_PER_PAGE);
 
   return (
     <>
-      <SearchOverview query={q} resultsCount={searchResults.length} />
+      <SearchOverview query={q} resultsCount={totalResults} />
 
       <div className={styles.SearchResultsWrapper}>
-        {searchResults.map((entity) => (
+        {paginatedResults.map((entity) => (
           <Card
             key={`search-result-${entity.id}`}
             image={entity.imageSrc}>
@@ -66,7 +71,7 @@ export default async function SearchPage({ searchParams }: Props) {
         ))}
       </div>
 
-      <Pagination currentPage={page} totalPages={18} pageWindowSize={5} />
+      <Pagination currentPage={page} totalPages={totalPages} pageWindowSize={5} resultsPerPage={paginatedResults.length} totalResults={searchResults.length} />
     </>
   );
 }

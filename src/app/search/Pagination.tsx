@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Module from '../common/Module';
 import styles from './Pagination.module.css';
@@ -11,13 +11,20 @@ interface Props {
   currentPage: number;
   totalPages: number;
   pageWindowSize: number;
+  resultsPerPage: number;
+  totalResults: number;
 }
 
-export default function Pagination({ currentPage, totalPages, pageWindowSize }: Props) {
-  const [displayPages, setDisplayPages] = useState<number[]>(newPageWindowFrom(currentPage - Math.floor(pageWindowSize / 2)));
+export default function Pagination({ currentPage, totalPages, pageWindowSize, resultsPerPage, totalResults }: Props) {
+  const [displayPages, setDisplayPages] = useState<number[]>(newPageWindowFrom(Math.max(currentPage - Math.floor(pageWindowSize / 2), 1)));
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const newWindowStart = Math.max(currentPage - Math.floor(pageWindowSize / 2), 1);
+    setDisplayPages(newPageWindowFrom(newWindowStart));
+  }, [currentPage, totalPages]);
 
   const createPageURL = (pageNumber: number) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -30,7 +37,7 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize }: 
       startPage = 1;
     }
     if (startPage > totalPages - pageWindowSize + 1) {
-      startPage = totalPages - pageWindowSize + 1;
+      startPage = Math.max(totalPages - pageWindowSize + 1, 1);
     }
 
     const newPageWindow = [];
@@ -52,9 +59,12 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize }: 
     setDisplayPages(newPageWindowFrom(displayPages[displayPages.length - 1] + 1));
   }
 
+  const startResult = totalResults === 0 ? 0 : (currentPage - 1) * resultsPerPage + 1;
+  const endResult = Math.min(currentPage * resultsPerPage, totalResults);
+
   return (
     <Module className={styles.Pagination}>
-      <div className={styles.PageInfo}>Showing 1-8 of 24 results</div>
+      <div className={styles.PageInfo}> Showing {startResult}-{endResult} of {totalResults} results</div>
       <div className={styles.Buttons}>
         <MdChevronLeft
           className={
