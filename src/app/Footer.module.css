@@ -1,0 +1,175 @@
+.Footer {
+  background-color: var(--background);
+  border-top: 1px solid #e5e7eb;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.Container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.FlexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.FlexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ContentContainer {
+  margin-bottom: 1.5rem;
+}
+
+.LogoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.LogoText {
+  font-size: 1.25rem;
+  font-family: 'Pacifico';
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+.BrandText {
+  color: #4b5563;
+}
+
+.Description {
+  color: #4b5563;
+  margin-top: 0.5rem;
+  max-width: 28rem;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.GridColumn {
+  margin-bottom: 0;
+}
+
+.SectionTitle {
+  color: var(--on-background);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.LinkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Link {
+  color: #4b5563;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.Link:hover {
+  color: var(--primary-hover);
+}
+
+.Divider {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Copyright {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.SocialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.SocialIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+}
+
+.SocialIcon:hover {
+  color: var(--primary);
+}
+
+@media (min-width: 640px) {
+  .Container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .Container {
+    max-width: 768px;
+  }
+  .FlexColumn {
+    flex-direction: row;
+  }
+
+  .LogoContainer {
+    margin-bottom: 0;
+  }
+
+  .Grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .Divider {
+    flex-direction: row;
+  }
+
+  .SocialIcons {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .Container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .Container {
+    max-width: 1536px;
+  }
+}
