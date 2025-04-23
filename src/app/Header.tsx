@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import logo from '@/../public/reptile-world-logo.svg';
+import DropdownMenu from './DropdownMenu';
 
 export default function Header() {
   return (
@@ -20,6 +21,7 @@ export default function Header() {
         <Link href="#" className={styles.Link}>Sign In</Link>
         <Link href="#" className={styles.FilledLink}>Sign Up</Link>
       </div>
+      <DropdownMenu />
     </header>
   );
 }
