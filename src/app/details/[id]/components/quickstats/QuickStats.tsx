@@ -6,6 +6,7 @@ import iconPrice from '@/../public/icon-price.svg';
 import iconSize from '@/../public/icon-size.svg';
 import iconTemperature from '@/../public/icon-temperature.svg';
 import { DIFFICULTY_TEXTS, EntityDetails, RangeValue } from '@/app/data/EntityData';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import React from 'react';
 import Module from '../../../../common/Module';
@@ -53,9 +54,9 @@ interface Props {
   details: EntityDetails;
 }
 
-function valueToString(value: any, display: {
+function valueToString(value: number | RangeValue | Array<number>, display: {
   label: string;
-  icon: any;
+  icon: StaticImport;
   unit?: string;
   convert?: (data: number) => string;
 }) {
@@ -63,13 +64,10 @@ function valueToString(value: any, display: {
     return DIFFICULTY_TEXTS[value - 1];
   } else if (Array.isArray(value)) {
     return value.join('/');
-  } else if (typeof value === 'object') {
-    // Assume the value is RangeValue.
+  } else {
     const range = value as RangeValue;
     return (range.min ? display.convert!(range.min) : '') + ' ~ ' + (range.max ? display.convert!(range.max) : '');
   }
-
-  return JSON.stringify(value);
 }
 
 export default function QuickStats({ details }: Props) {
