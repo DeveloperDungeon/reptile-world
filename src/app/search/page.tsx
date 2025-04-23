@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { FaStar } from 'react-icons/fa';
 import EntityData from '../data/EntityData';
-import { DUMMY_ENTITIES } from '../details/[id]/components/family_tree/dummy_family_trees';
+import DUMMY_ENTITIES from '../dummy/dummy_entities';
 import Card from './Card';
 import styles from './page.module.css';
 import Pagination from './Pagination';
