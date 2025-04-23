@@ -6,7 +6,7 @@
   margin-left: calc(50% - 50vw);
   margin-top: -4rem;
 
-  --image-width: 600px;
+  --image-width: 750px;
 }
 
 .ImageWrapper {
@@ -25,7 +25,8 @@
 
 .BannerContent {
   position: absolute;
-  left: 0;
+  left: calc((100vw - var(--image-width)) / 2);
+  transform: translateX(-50%);
   padding: 48px;
   top: 0;
   bottom: 0;
@@ -50,14 +51,15 @@
 .Description {
   color: white;
   font-size: 1.125rem;
-  max-width: 42rem;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1200px) {
   .BannerContent {
+    left: 0;
     right: 0;
     max-width: none;
     background: linear-gradient(to bottom, black, transparent);
+    transform: none;
   }
 }
 
