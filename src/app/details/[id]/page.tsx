@@ -5,7 +5,7 @@ import FamilyMemberData from '@/app/data/FamilyMemberData';
 import DUMMY_ENTITIES from '@/app/dummy/dummy_entities';
 import Banner from './components/banner/Banner';
 import Breeder from './components/breeder/Breeder';
-import { DUMMY_FAMILY_TREES } from './components/family_tree/dummy_family_trees';
+import { DUMMY_FAMILY_TREES } from '../../dummy/dummy_family_trees';
 import FamilyTree from './components/family_tree/FamilyTree';
 import QuickStats from './components/quickstats/QuickStats';
 import styles from './page.module.css';
