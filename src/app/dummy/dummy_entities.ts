@@ -9,6 +9,29 @@ export const DUMMY_MALE_1: EntityData = {
   species: '크레스티드 게코',
   description:
     '속눈썹 같은 볏과 점프 능력으로 유명한 인기 있는 교목성 도마뱀입니다. 비교적 관리가 쉽습니다.',
+  details: {
+    size: {
+      minMm: 180,
+      maxMm: 230,
+    },
+    lifespan: {
+      minDays: 5475,
+      maxDays: 7300,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 22,
+      maxCelcius: 26,
+    },
+    humidity: {
+      min: 60,
+      max: 80,
+    },
+    price: {
+      minWon: 50000,
+    },
+    difficulty: 1,
+  },
 };
 
 export const DUMMY_MALE_2: EntityData = {
@@ -20,6 +43,29 @@ export const DUMMY_MALE_2: EntityData = {
   species: '크레스티드 게코',
   description:
     '뉴칼레도니아 원산지로, 야행성이며 특별한 난방 없이 실온 환경에서도 잘 자랍니다.',
+  details: {
+    size: {
+      minMm: 175,
+      maxMm: 225,
+    },
+    lifespan: {
+      minDays: 5110,
+      maxDays: 6935,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 21,
+      maxCelcius: 27,
+    },
+    humidity: {
+      min: 58,
+      max: 82,
+    },
+    price: {
+      minWon: 45000,
+    },
+    difficulty: 2,
+  },
 };
 
 export const DUMMY_MALE_3: EntityData = {
@@ -31,6 +77,30 @@ export const DUMMY_MALE_3: EntityData = {
   species: '크레스티드 게코',
   description:
     '주식은 물과 섞은 상업용 게코 푸드 파우더이며, 곤충을 보충해줍니다. 먹이 주기가 간단합니다.',
+  details: {
+    size: {
+      minMm: 185,
+      maxMm: 235,
+    },
+    lifespan: {
+      minDays: 5475,
+      maxDays: 7665,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 23,
+      maxCelcius: 25,
+    },
+    humidity: {
+      min: 62,
+      max: 78,
+    },
+    price: {
+      minWon: 55000,
+      maxWon: 90000,
+    },
+    difficulty: 1,
+  },
 };
 
 export const DUMMY_MALE_4: EntityData = {
@@ -42,6 +112,29 @@ export const DUMMY_MALE_4: EntityData = {
   species: '크레스티드 게코',
   description:
     '차분한 성격으로 알려져 있지만 점프를 잘 할 수 있습니다. 부드럽게 다루세요. 조심성 있는 초보자에게 좋습니다.',
+  details: {
+    size: {
+      minMm: 178,
+      maxMm: 228,
+    },
+    lifespan: {
+      minDays: 5475,
+      maxDays: 6935,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 22,
+      maxCelcius: 26,
+    },
+    humidity: {
+      min: 60,
+      max: 80,
+    },
+    price: {
+      minWon: 52000,
+    },
+    difficulty: 3,
+  },
 };
 
 export const DUMMY_MALE_5: EntityData = {
@@ -53,6 +146,30 @@ export const DUMMY_MALE_5: EntityData = {
   species: '크레스티드 게코',
   description:
     '타고 오르거나 숨을 수 있는 충분한 식물이 있는 수직형 테라리움이 필요합니다. 습도 관리에 신경 써야 합니다.',
+  details: {
+    size: {
+      minMm: 182,
+      maxMm: 232,
+    },
+    lifespan: {
+      minDays: 5840,
+      maxDays: 7300,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 21,
+      maxCelcius: 25,
+    },
+    humidity: {
+      min: 65,
+      max: 85,
+    },
+    price: {
+      minWon: 60000,
+      maxWon: 100000,
+    },
+    difficulty: 2,
+  },
 };
 
 export const DUMMY_FEMALE_1: EntityData = {
@@ -64,6 +181,30 @@ export const DUMMY_FEMALE_1: EntityData = {
   species: '크레스티드 게코',
   description:
     '다양한 색상과 패턴(모프)으로 유명합니다. 이 개체는 아름다운 패턴을 보여줍니다. 관리가 쉬워 인기 있는 반려동물입니다.',
+  details: {
+    size: {
+      minMm: 180,
+      maxMm: 230,
+    },
+    lifespan: {
+      minDays: 5475,
+      maxDays: 7300,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 22,
+      maxCelcius: 27,
+    },
+    humidity: {
+      min: 60,
+      max: 80,
+    },
+    price: {
+      minWon: 100000,
+      maxWon: 250000,
+    },
+    difficulty: 1,
+  },
 };
 
 export const DUMMY_FEMALE_2: EntityData = {
@@ -75,6 +216,30 @@ export const DUMMY_FEMALE_2: EntityData = {
   species: '크레스티드 게코',
   description:
     '대부분의 크레스티드 게코처럼, 이 암컷은 비교적 관리가 쉬워 새로운 파충류 사육자에게 적합합니다.',
+  details: {
+    size: {
+      minMm: 185,
+      maxMm: 240,
+    },
+    lifespan: {
+      minDays: 5840,
+      maxDays: 7665,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 23,
+      maxCelcius: 26,
+    },
+    humidity: {
+      min: 55,
+      max: 75,
+    },
+    price: {
+      minWon: 120000,
+      maxWon: 300000,
+    },
+    difficulty: 2,
+  },
 };
 
 export const DUMMY_FEMALE_3: EntityData = {
@@ -86,6 +251,29 @@ export const DUMMY_FEMALE_3: EntityData = {
   species: '크레스티드 게코',
   description:
     '일반적으로 쉽지만, 적절한 습도 수준과 균형 잡힌 식단을 보장하는 것이 건강의 핵심입니다. 아주 어렵지는 않습니다.',
+  details: {
+    size: {
+      minMm: 175,
+      maxMm: 225,
+    },
+    lifespan: {
+      minDays: 5110,
+      maxDays: 6935,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 21,
+      maxCelcius: 25,
+    },
+    humidity: {
+      min: 63,
+      max: 83,
+    },
+    price: {
+      minWon: 90000,
+    },
+    difficulty: 3,
+  },
 };
 
 export const DUMMY_FEMALE_4: EntityData = {
@@ -97,6 +285,30 @@ export const DUMMY_FEMALE_4: EntityData = {
   species: '크레스티드 게코',
   description:
     '활발하고 호기심 많은 성격의 크레스티드 게코 암컷입니다. 관리가 용이하여 처음 키우는 분들께도 적합합니다.',
+  details: {
+    size: {
+      minMm: 183,
+      maxMm: 233,
+    },
+    lifespan: {
+      minDays: 5658,
+      maxDays: 7483,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 22,
+      maxCelcius: 26,
+    },
+    humidity: {
+      min: 58,
+      max: 78,
+    },
+    price: {
+      minWon: 150000,
+      maxWon: 400000,
+    },
+    difficulty: 4,
+  },
 };
 
 export const DUMMY_FEMALE_5: EntityData = {
@@ -108,6 +320,29 @@ export const DUMMY_FEMALE_5: EntityData = {
   species: '크레스티드 게코',
   description:
     '아름다운 외모를 가진 크레스티드 게코 암컷입니다. 야행성으로, 저녁 시간에 활동하는 모습을 관찰할 수 있습니다.',
+  details: {
+    size: {
+      minMm: 188,
+      maxMm: 238,
+    },
+    lifespan: {
+      minDays: 6023,
+      maxDays: 7848,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 23,
+      maxCelcius: 27,
+    },
+    humidity: {
+      min: 61,
+      max: 81,
+    },
+    price: {
+      minWon: 110000,
+    },
+    difficulty: 2,
+  },
 };
 
 export const DUMMY_UNKNOWN_1: EntityData = {
@@ -119,9 +354,33 @@ export const DUMMY_UNKNOWN_1: EntityData = {
   species: '크레스티드 게코',
   description:
     '튼튼하고 건강한 크레스티드 게코입니다. 적절한 환경만 갖춰주면 키우기 어렵지 않습니다. 아직 어려 성별이 특정되지 않았습니다.',
+  details: {
+    size: {
+      minMm: 180,
+      maxMm: 230,
+    },
+    lifespan: {
+      minDays: 5475,
+      maxDays: 7300,
+    },
+    habitat: ['열대', '교목성'],
+    temperature: {
+      minCelcius: 22,
+      maxCelcius: 26,
+    },
+    humidity: {
+      min: 60,
+      max: 80,
+    },
+    price: {
+      minWon: 40000,
+      maxWon: 70000,
+    },
+    difficulty: 5,
+  },
 };
 
-const DUMMY_ENTITIES = [
+const DUMMY_ENTITIES: EntityData[] = [
   DUMMY_MALE_1,
   DUMMY_MALE_2,
   DUMMY_MALE_3,
