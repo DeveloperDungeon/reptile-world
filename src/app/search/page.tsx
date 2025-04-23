@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { FaStar } from 'react-icons/fa';
 import EntityData from '../data/EntityData';
-import { DUMMY_ENTITIES } from '../details/[id]/components/family_tree/dummy_family_trees';
+import getDummySearch from '../dummy/dummy_search';
 import Card from './Card';
 import styles from './page.module.css';
 import Pagination from './Pagination';
@@ -20,11 +20,7 @@ interface Props {
 async function fetchSearchResults(): Promise<(EntityData & {
   difficulty: number,
 })[]> {
-  const difficultyLevels = [1, 1, 2, 4, 4, 1, 2, 3, 5, 1, 3];
-  return DUMMY_ENTITIES.map((entity, i) => ({
-    ...entity,
-    difficulty: difficultyLevels[i],
-  }));
+  return getDummySearch();
 }
 
 export default async function SearchPage({ searchParams }: Props) {
