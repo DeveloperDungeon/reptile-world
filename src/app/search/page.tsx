@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { FaStar } from 'react-icons/fa';
-import EntityData from '../data/EntityData';
+import EntityData, { DIFFICULTY_TEXTS } from '../data/EntityData';
 import getDummySearch from '../dummy/dummy_search';
 import Card from './Card';
 import styles from './page.module.css';
 import Pagination from './Pagination';
 import SearchOverview from './SearchOverview';
-
-const DIFFICULTY_TEXTS = ['입문', '초급', '중급', '상급', '전문가'];
 
 interface Props {
   searchParams: Promise<{
