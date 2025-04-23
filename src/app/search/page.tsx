@@ -17,9 +17,13 @@ interface Props {
   }>;
 }
 
-async function fetchSearchResults(): Promise<(EntityData & {
-  difficulty: number,
-})[]> {
+export type SearchEntityData = EntityData & {
+  details: {
+    difficulty: number,
+  },
+};
+
+async function fetchSearchResults(): Promise<SearchEntityData[]> {
   return getDummySearch();
 }
 
@@ -55,7 +59,7 @@ export default async function SearchPage({ searchParams }: Props) {
               <p className={styles.Description}>{entity.description}</p>
               <div className={styles.Footer}>
                 <div className={styles.Difficulty}>
-                  <FaStar className={styles.DifficultyIcon} />{DIFFICULTY_TEXTS[entity.difficulty - 1]}
+                  <FaStar className={styles.DifficultyIcon} />{DIFFICULTY_TEXTS[entity.details.difficulty - 1]}
                 </div>
                 <Link href={`/details/${entity.id}`} className={styles.Link}>자세히 보기</Link>
               </div>
