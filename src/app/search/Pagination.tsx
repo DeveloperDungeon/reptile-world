@@ -34,7 +34,7 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize, re
 
   function newPageWindowFrom(startPage: number) {
     if (startPage > totalPages - pageWindowSize + 1) {
-      startPage =totalPages - pageWindowSize + 1;
+      startPage = totalPages - pageWindowSize + 1;
     }
 
     if (startPage < 1) {
@@ -65,7 +65,7 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize, re
 
   return (
     <Module className={styles.Pagination}>
-      <div className={styles.PageInfo}> Showing {startResult}-{endResult} of {totalResults} results</div>
+      <div className={styles.PageInfo}>총 {totalResults} 결과 중 {startResult}-{endResult}개 표시</div>
       <div className={styles.Buttons}>
         <MdChevronLeft
           className={
