@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { RiMenuLine } from 'react-icons/ri';
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import styles from './DropdownMenu.module.css';
 import { usePathname } from 'next/navigation';
 
@@ -13,7 +13,7 @@ function DropdownMenu() {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
@@ -21,7 +21,9 @@ function DropdownMenu() {
   return (
     <>
       <div className={styles.MenuButton} onClick={toggleMenu}>
-        <RiMenuLine size={24} />
+        <span className={`${styles.IconWrapper} ${isMenuOpen ? styles.Open : ''}`}>
+          {isMenuOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
+        </span>
       </div>
       {isMenuOpen && (
         <div className={styles.Menu}>

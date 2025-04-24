@@ -7,6 +7,17 @@
   display: none;
 }
 
+.IconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 300ms ease;
+}
+
+.IconWrapper.Open {
+  transform: rotate(90deg) scale(1.2);
+}
+
 @media screen and (max-width: 768px) {
   .MenuButton {
     display: flex;
