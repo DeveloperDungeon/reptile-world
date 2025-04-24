@@ -4,7 +4,7 @@
   height: 500px;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  margin-top: -4rem;
+  margin-top: -2rem;
 
   --image-width: 750px;
 }
