@@ -114,3 +114,7 @@
 .Female.GenderBadge {
   background-color: #c90076;
 }
+
+.Unknown.GenderBadge {
+  background-color: gray;
+}
