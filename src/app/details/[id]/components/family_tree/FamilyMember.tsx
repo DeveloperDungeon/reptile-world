@@ -48,8 +48,8 @@ export default function FamilyMember({
       </Link>
       <div
         className={styles.GenderBadge + ' ' +
-          (member.gender === 'MALE' ? styles.Male : styles.Female)}>
-        {member.gender === 'MALE' ? '♂' : '♀'}
+          (member.gender === 'MALE' ? styles.Male : member.gender === 'FEMALE' ? styles.Female : styles.Unknown)}>
+        {member.gender === 'MALE' ? '♂' : member.gender === 'FEMALE' ? '♀' : '?'}
       </div>
       {childrenCount && <div
         className={styles.ChildrenCount + (isChildrenCountSelected ? ' ' + styles.Selected : '')}
