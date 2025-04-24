@@ -16,13 +16,13 @@ interface Props {
 }
 
 export default function Pagination({ currentPage, totalPages, pageWindowSize, resultsPerPage, totalResults }: Props) {
-  const [displayPages, setDisplayPages] = useState<number[]>(newPageWindowFrom(Math.max(currentPage - Math.floor(pageWindowSize / 2), 1)));
+  const [displayPages, setDisplayPages] = useState<number[]>(newPageWindowFrom(currentPage - Math.floor(pageWindowSize / 2)));
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const newWindowStart = Math.max(currentPage - Math.floor(pageWindowSize / 2), 1);
+    const newWindowStart = displayPages.includes(currentPage) ? displayPages[0] : currentPage - Math.floor(pageWindowSize / 2); 
     setDisplayPages(newPageWindowFrom(newWindowStart));
   }, [currentPage, totalPages]);
 
@@ -33,11 +33,12 @@ export default function Pagination({ currentPage, totalPages, pageWindowSize, re
   };
 
   function newPageWindowFrom(startPage: number) {
+    if (startPage > totalPages - pageWindowSize + 1) {
+      startPage =totalPages - pageWindowSize + 1;
+    }
+
     if (startPage < 1) {
       startPage = 1;
-    }
-    if (startPage > totalPages - pageWindowSize + 1) {
-      startPage = Math.max(totalPages - pageWindowSize + 1, 1);
     }
 
     const newPageWindow = [];

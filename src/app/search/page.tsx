@@ -71,7 +71,7 @@ export default async function SearchPage({ searchParams }: Props) {
         ))}
       </div>
 
-      <Pagination currentPage={page} totalPages={totalPages} pageWindowSize={5} resultsPerPage={paginatedResults.length} totalResults={searchResults.length} />
+      <Pagination currentPage={page} totalPages={totalPages} pageWindowSize={5} resultsPerPage={8} totalResults={searchResults.length} />
     </>
   );
 }
