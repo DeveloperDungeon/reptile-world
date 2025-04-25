@@ -1,7 +1,10 @@
 .BannerContentWrapper {
   position: relative;
   width: calc(100% + 3rem);
-  height: 380px;
+  height: auto;
+  min-height: 240px;
+  max-height: 400px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   margin: -1.5rem;
 }
