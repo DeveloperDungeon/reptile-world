@@ -7,10 +7,10 @@ import DropdownMenu from './DropdownMenu';
 export default function Header() {
   return (
     <header className={styles.Header}>
-      <div className={styles.Title}>
+      <Link href="/" className={styles.Title}>
         <Image src={logo} width={42} height={42} alt='logo' className={styles.Logo} />
         Reptile World
-      </div>
+      </Link>
       <nav className={styles.Navigation}>
         <Link href="/" className={styles.Link}>Home</Link>
         <Link href="#" className={styles.Link}>About</Link>
