@@ -25,30 +25,28 @@ function DropdownMenu() {
           {isMenuOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
         </span>
       </div>
-      {isMenuOpen && (
-        <div className={styles.Menu}>
-          <Link href="/" className={styles.Link}>
-            Home
-          </Link>
+      <div className={`${styles.Menu} ${isMenuOpen ? styles.MenuOpen : ''}`}>
+        <Link href="/" className={styles.Link}>
+          Home
+        </Link>
+        <Link href="#" className={styles.Link}>
+          About
+        </Link>
+        <Link href="#" className={styles.Link}>
+          Species
+        </Link>
+        <Link href="#" className={styles.Link}>
+          Contact
+        </Link>
+        <div className={styles.Actions}>
           <Link href="#" className={styles.Link}>
-            About
+            Sign In
           </Link>
-          <Link href="#" className={styles.Link}>
-            Species
+          <Link href="#" className={styles.FilledLink}>
+            Sign Up
           </Link>
-          <Link href="#" className={styles.Link}>
-            Contact
-          </Link>
-          <div className={styles.Actions}>
-            <Link href="#" className={styles.Link}>
-              Sign In
-            </Link>
-            <Link href="#" className={styles.FilledLink}>
-              Sign Up
-            </Link>
-          </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
