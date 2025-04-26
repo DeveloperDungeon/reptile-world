@@ -24,7 +24,7 @@ export type SearchEntityData = EntityData & {
 const RESULTS_SIZE_PER_PAGE = 8;
 
 async function fetchSearchResults(q: string): Promise<SearchEntityData[]> {
-  return getDummySearch().filter((entity) => entity.name.includes(q));
+  return getDummySearch().filter((entity) => entity.name.includes(q) || entity.id.includes(q));
 }
 
 export default async function SearchPage({ searchParams }: Props) {
