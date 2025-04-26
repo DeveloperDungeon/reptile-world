@@ -24,7 +24,7 @@ import {
 } from '@/app/dummy/dummy_entities';
 
 export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
-  // id: HayunbrandgeckoM00000001
+  // id: HayunbrndCGM00000001
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -53,7 +53,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoM00000002
+  // id: HayunbrndCGM00000002
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -63,7 +63,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoM00000003
+  // id: HayunbrndCGM00000003
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -92,7 +92,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoM00000004
+  // id: HayunbrndCGM00000004
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -121,7 +121,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoM00000005
+  // id: HayunbrndCGM00000005
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -150,18 +150,18 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  //id:HayunbrandgeckoM00000006
+  //id:HayunbrndCGM00000006
   DUMMY_MALE_6,
-  //id:HayunbrandgeckoM00000007
+  //id:HayunbrndCGM00000007
   DUMMY_MALE_7,
-  //id:HayunbrandgeckoM00000008
+  //id:HayunbrndCGM00000008
   DUMMY_MALE_8,
-  //id:HayunbrandgeckoM00000009
+  //id:HayunbrndCGM00000009
   DUMMY_MALE_9,
-  //id:HayunbrandgeckoM00000010
+  //id:HayunbrndCGM00000010
   DUMMY_MALE_10,
   
-  // id: HayunbrandgeckoF00000001
+  // id: HayunbrndCGF00000001
   {
     ...DUMMY_FEMALE_1,
     mates: [
@@ -190,7 +190,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoF00000002
+  // id: HayunbrndCGF00000002
   {
     ...DUMMY_MALE_1,
     mates: [
@@ -200,7 +200,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoF00000003
+  // id: HayunbrndCGF00000003
   {
     ...DUMMY_FEMALE_3,
     mates: [
@@ -210,7 +210,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoF00000004
+  // id: HayunbrndCGF00000004
   {
     ...DUMMY_FEMALE_4,
     mates: [
@@ -220,7 +220,7 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  // id: HayunbrandgeckoF00000005
+  // id: HayunbrndCGF00000005
   {
     ...DUMMY_FEMALE_5,
     mates: [
@@ -229,17 +229,17 @@ export const DUMMY_FAMILY_TREES: FamilyMemberData[] = [
       },
     ],
   },
-  //id:HayunbrandgeckoF00000006
+  //id:HayunbrndCGF00000006
   DUMMY_FEMALE_6,
-  //id:HayunbrandgeckoF00000007
+  //id:HayunbrndCGF00000007
   DUMMY_FEMALE_7,
-  //id:HayunbrandgeckoF00000008
+  //id:HayunbrndCGF00000008
   DUMMY_FEMALE_8,
-  //id:HayunbrandgeckoF00000009
+  //id:HayunbrndCGF00000009
   DUMMY_FEMALE_9,
-  //id:HayunbrandgeckoF00000010
+  //id:HayunbrndCGF00000010
   DUMMY_FEMALE_10,
-  // id: HayunbrandgeckoU00000001
+  // id:HayunbrndCGU00000001
   {
     ...DUMMY_MALE_1,
     mates: [
