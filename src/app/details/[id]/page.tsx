@@ -3,6 +3,7 @@ import BreederData from '@/app/data/BreederData';
 import EntityData from '@/app/data/EntityData';
 import FamilyMemberData from '@/app/data/FamilyMemberData';
 import getDummyDetails from '@/app/dummy/dummy_details';
+import { notFound } from 'next/navigation';
 import Banner from './components/banner/Banner';
 import Breeder from './components/breeder/Breeder';
 import FamilyTree from './components/family_tree/FamilyTree';
@@ -14,13 +15,19 @@ async function fetchData(id: string): Promise<{
   bannerImages: string[],
   breeder: BreederData,
   familyTree: FamilyMemberData,
-}> {
+} | null> {
   return getDummyDetails(id);
 }
 
 export default async function DetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const { entity, bannerImages, breeder, familyTree } = await fetchData(id);
+  const data = await fetchData(id);
+
+  if (data == null) {
+    notFound();
+  }
+
+  const { entity, bannerImages, breeder, familyTree } = data;
 
   return (
     <>

@@ -2,7 +2,11 @@ import DUMMY_ENTITIES from './dummy_entities';
 import { DUMMY_FAMILY_TREES } from './dummy_family_trees';
 
 export default function getDummyDetails(id: string) {
-  const index = Number(id) - 1;
+  const index = DUMMY_ENTITIES.findIndex((entity) => entity.id === id);
+
+  if (index === -1) {
+    return null;
+  }
 
   const familyTree = DUMMY_FAMILY_TREES[index];
   const dummyEntity = DUMMY_ENTITIES[index];
