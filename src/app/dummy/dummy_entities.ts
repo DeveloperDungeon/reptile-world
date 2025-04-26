@@ -175,7 +175,7 @@ export const DUMMY_MALE_5: EntityData = {
 export const DUMMY_MALE_6: EntityData = {
   id: 'HayunbrandgeckoM00000006',
   imageSrc:
-    'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfNzAg/MDAxNjI0NzE4OTA3MTcy.S2auuWNv59fLez28X7kmJt536NIU8eecNMkPq2J6QFsg.80lukmmDxXXq7YJs8Qk7pro5scX31eC55fCliZIddaEg.PNG',
+    'https://ionefree.com/wp-content/uploads/2024/06/image-22-optimized.png',
   name: '게코 수컷 6',
   gender: 'MALE',
   species: '크레스티드 게코',
