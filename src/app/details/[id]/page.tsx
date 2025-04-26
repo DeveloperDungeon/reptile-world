@@ -38,7 +38,7 @@ export default async function DetailsPage({ params }: { params: Promise<{ id: st
             <Breeder breeder={breeder} />
           </div>
           <div className={styles.QuickStats}>
-            {entity.details && <QuickStats details={entity.details} />}
+            {entity.details && <QuickStats details={{ ...entity.details, id: entity.id }} />}
           </div>
         </div>
         <div className={styles.Content}>

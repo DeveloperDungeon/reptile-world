@@ -48,10 +48,14 @@ const statDisplayMap = new Map([
     icon: iconCareLevel,
     convert: (data: number) => DIFFICULTY_TEXTS[data - 1],
   }],
+  ['id', {
+    label: '고유 코드',
+    icon: null,
+  }],
 ]);
 
 interface Props {
-  details: EntityDetails;
+  details: EntityDetails & { id: string };
 }
 
 function valueToString(value: number | RangeValue | Array<number>, display: {
@@ -60,7 +64,9 @@ function valueToString(value: number | RangeValue | Array<number>, display: {
   unit?: string;
   convert?: (data: number) => string;
 }) {
-  if (typeof value === 'number') {
+  if (typeof value === 'string') {
+    return value;
+  } else if (typeof value === 'number') {
     return DIFFICULTY_TEXTS[value - 1];
   } else if (Array.isArray(value)) {
     return value.join('/');
@@ -82,9 +88,12 @@ export default function QuickStats({ details }: Props) {
 
           return (
             <React.Fragment key={`stat-${stat}`}>
-              <div className={styles.statIcon}>
-                <Image src={display.icon} alt={display.label} width={14} height={14} />
-              </div>
+              {display.icon && <>
+                <div className={styles.statIcon}>
+                  <Image src={display.icon} alt={display.label} width={14} height={14} />
+                </div>
+              </>}
+              {!display.icon && <><div></div></>}
               <div className={styles.statLabel}>
                 {display.label}
               </div>
