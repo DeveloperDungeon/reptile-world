@@ -22,4 +22,6 @@
   text-align: right;
   font-weight: bold;
   color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
