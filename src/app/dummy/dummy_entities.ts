@@ -1,7 +1,7 @@
 import EntityData from '../data/EntityData';
 
 export const DUMMY_MALE_1: EntityData = {
-  id: 'HayunbrandgeckoM00000001',
+  id: 'HayunbrndCGM00000001',
   imageSrc:
     'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgwy1dOJa3-jpTfRxBmXG6-u-R8IzkG_AGlKLgesk_M2I1i3K4FMA0ZWqAI5HUpZXtqmG2hhfooARUr7r8wa--VA',
   name: '게코 수컷 1',
@@ -35,7 +35,7 @@ export const DUMMY_MALE_1: EntityData = {
 };
 
 export const DUMMY_MALE_2: EntityData = {
-  id: 'HayunbrandgeckoM00000002',
+  id: 'HayunbrndCGM00000002',
   imageSrc:
     'https://zooboise.org/wp-content/uploads/2024/05/2024-Crested-gecko-block.png',
   name: '게코 수컷 2',
@@ -69,7 +69,7 @@ export const DUMMY_MALE_2: EntityData = {
 };
 
 export const DUMMY_MALE_3: EntityData = {
-  id: 'HayunbrandgeckoM00000003',
+  id: 'HayunbrndCGM00000003',
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3u6sJjAXFVCMI-2ye5DUo0eG8JjyrnvSsTsSzXbLSc8hH6Exs8RNFtQZlhSKcS-jP04c&usqp=CAU',
   name: '게코 수컷 3',
@@ -104,7 +104,7 @@ export const DUMMY_MALE_3: EntityData = {
 };
 
 export const DUMMY_MALE_4: EntityData = {
-  id: 'HayunbrandgeckoM00000004',
+  id: 'HayunbrndCGM00000004',
   imageSrc:
     'https://i0.wp.com/badgerlandrescue.com/wp-content/uploads/ToBeSorted/360_F_61097391_ynTSjFhpcXEhJCnRE7YJyG33lvBUKCO8.jpg?resize=540%2C360&ssl=1',
   name: '게코 수컷 4',
@@ -138,7 +138,7 @@ export const DUMMY_MALE_4: EntityData = {
 };
 
 export const DUMMY_MALE_5: EntityData = {
-  id: 'HayunbrandgeckoM00000005',
+  id: 'HayunbrndCGM00000005',
   imageSrc:
     'https://www.zillarules.com/-/media/project/oneweb/zilla/images/blog-articles/6-types-of-pet-geckos/crested-gecko.jpg',
   name: '게코 수컷 5',
@@ -173,7 +173,7 @@ export const DUMMY_MALE_5: EntityData = {
 };
 
 export const DUMMY_MALE_6: EntityData = {
-  id: 'HayunbrandgeckoM00000006',
+  id: 'HayunbrndCGM00000006',
   imageSrc:
     'https://ionefree.com/wp-content/uploads/2024/06/image-22-optimized.png',
   name: '게코 수컷 6',
@@ -207,7 +207,7 @@ export const DUMMY_MALE_6: EntityData = {
 };
 
 export const DUMMY_MALE_7: EntityData = {
-  id: 'HayunbrandgeckoM00000007',
+  id: 'HayunbrndCGM00000007',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMjMy/MDAxNjI0NzE5MTUzNDQy.Wr6kp77sPEsxkdFdC0903BWh5e3g83f-i6y8o7rdN-Yg.O74JwlpX92AZ5bcEc3RKmSo3K62gs9fUI1Suevs4pDAg.JPEG.jb-eom/%EC%95%84%EC%9E%94%ED%8B%B1.jpg?type=w800',
   name: '게코 수컷 7',
@@ -241,7 +241,7 @@ export const DUMMY_MALE_7: EntityData = {
 };
 
 export const DUMMY_MALE_8: EntityData = {
-  id: 'HayunbrandgeckoM00000008',
+  id: 'HayunbrndCGM00000008',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMTk3/MDAxNjI0NzE5MjAxOTY3.fnGjm-hSrqyky1935mcHFWmS6kGHH3lwqZZ_Q3u11eAg.YCPz_XYFzZNPPFpJsP4ZWbyP5xvDFZ6UTQnf-xXjnPog.JPEG.jb-eom/%EB%B2%85%EC%8A%A4%ED%82%A8.jpg?type=w800',
   name: '게코 수컷 8',
@@ -275,7 +275,7 @@ export const DUMMY_MALE_8: EntityData = {
 };
 
 export const DUMMY_MALE_9: EntityData = {
-  id: 'HayunbrandgeckoM00000009',
+  id: 'HayunbrndCGM00000009',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMTY2/MDAxNjI0NzE5MjU1MTYy.u4HJrbQBtAfAiZwsUO8PlBVYhl1HzTQQpDl033rqenkg.g8w78j4A0uHm3boP9jgR2UkxQJr9lZ2dHK8_BhKSdd8g.JPEG.jb-eom/%EB%B0%94%EC%9D%B4%EC%BB%AC%EB%9F%AC.jpg?type=w800',
   name: '게코 수컷 9',
@@ -309,7 +309,7 @@ export const DUMMY_MALE_9: EntityData = {
 };
 
 export const DUMMY_MALE_10: EntityData = {
-  id: 'HayunbrandgeckoM00000010',
+  id: 'HayunbrndCGM00000010',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfNjgg/MDAxNjI0NzE5Mjc4NDQx.MMBpB5CW67DhjrHSPRmtTO4kxii2LA49We_dArYgmYsg.VhNUpd2grjROoDELX6S6E2UuZpTpSQ6P6RxAe7NxCskg.PNG.jb-eom/%ED%83%80%EC%9D%B4%EA%B1%B0.png?type=w800',
   name: '게코 수컷 10',
@@ -344,7 +344,7 @@ export const DUMMY_MALE_10: EntityData = {
 
 
 export const DUMMY_FEMALE_1: EntityData = {
-  id: 'HayunbrandgeckoF00000001',
+  id: 'HayunbrndCGF00000001',
   imageSrc:
     'https://jonathansjungleroadshow.co.uk/wp-content/uploads/2020/07/crestedgeckos5.jpg',
   name: '게코 암컷 1',
@@ -379,7 +379,7 @@ export const DUMMY_FEMALE_1: EntityData = {
 };
 
 export const DUMMY_FEMALE_2: EntityData = {
-  id: 'HayunbrandgeckoF00000002',
+  id: 'HayunbrndCGF00000002',
   imageSrc:
     'https://www.reptiles.swelluk.com/media/catalog/product/c/r/crested_gecko_correlophus_ciliatus.jpg?width=810&height=810&store=swell_reptiles_store_view&image-type=image',
   name: '게코 암컷 2',
@@ -414,7 +414,7 @@ export const DUMMY_FEMALE_2: EntityData = {
 };
 
 export const DUMMY_FEMALE_3: EntityData = {
-  id: 'HayunbrandgeckoF00000003',
+  id: 'HayunbrndCGF00000003',
   imageSrc:
     'https://www.reptilecentre.com/cdn/shop/articles/what_do_geckos_eat.png?v=1723822970',
   name: '게코 암컷 3',
@@ -448,7 +448,7 @@ export const DUMMY_FEMALE_3: EntityData = {
 };
 
 export const DUMMY_FEMALE_4: EntityData = {
-  id: 'HayunbrandgeckoF00000004',
+  id: 'HayunbrndCGF00000004',
   imageSrc:
     'https://www.wilbanksreptiles.com/cdn/shop/collections/BrowseCrestedGeckos.jpg?v=1711131817',
   name: '게코 암컷 4',
@@ -483,7 +483,7 @@ export const DUMMY_FEMALE_4: EntityData = {
 };
 
 export const DUMMY_FEMALE_5: EntityData = {
-  id: 'HayunbrandgeckoF00000005',
+  id: 'HayunbrndCGF00000005',
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh4bBWj5M_BSvAh1xXwB4v0dBG1sdyNza5GE1ZK2kxSdGfPDIYZmD4QMeYPS0fFNRMWdI&usqp=CAU',
   name: '게코 암컷 5',
@@ -517,7 +517,7 @@ export const DUMMY_FEMALE_5: EntityData = {
 };
 
 export const DUMMY_FEMALE_6: EntityData = {
-  id: 'HayunbrandgeckoF00000006',
+  id: 'HayunbrndCGF00000006',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMjI3/MDAxNjI0NzE5MzAwNTY2.LXRTlROg8dBnto3wi_3U8U55g-l9kVXM30RgaDLrqKIg._KH4d1xCaHPRsVM1fm_8KVblecG-wBenr6KVa_lH1BMg.PNG.jb-eom/%EB%B8%8C%EB%A6%B0%EB%93%A4.png?type=w800',
   name: '게코 암컷 6',
@@ -551,7 +551,7 @@ export const DUMMY_FEMALE_6: EntityData = {
 };
 
 export const DUMMY_FEMALE_7: EntityData = {
-  id: 'HayunbrandgeckoF00000007',
+  id: 'HayunbrndCGF00000007',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMTY3/MDAxNjI0NzE5MzMwMDQ0.Zo9etMBsXUDSSO0UickkaWT0FAQFDSQgBVQ9eZH5ThMg.I0gP2UeCApRIuX53M4jDEg_8ete17b0CDlj6TdHHp4gg.PNG.jb-eom/%ED%94%8C%EB%A0%88%EC%9E%84.png?type=w800',
   name: '게코 암컷 7',
@@ -585,7 +585,7 @@ export const DUMMY_FEMALE_7: EntityData = {
 };
 
 export const DUMMY_FEMALE_8: EntityData = {
-  id: 'HayunbrandgeckoF00000008',
+  id: 'HayunbrndCGF00000008',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMjMz/MDAxNjI0NzE5Mzc0Nzkz.WV-g5XsxX3xL97HsXG0sumvA-yVJqGiU4ObEOxMqvhsg.QgL8aGVPeWeW8OKLiCZtAT0Flr8yAPbdH2LD8PvI6HEg.PNG.jb-eom/%EC%9D%B5%ED%95%A0.png?type=w800',
   name: '게코 암컷 8',
@@ -619,7 +619,7 @@ export const DUMMY_FEMALE_8: EntityData = {
 };
 
 export const DUMMY_FEMALE_9: EntityData = {
-  id: 'HayunbrandgeckoF00000009',
+  id: 'HayunbrndCGF00000009',
   imageSrc:
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjZfMTUg/MDAxNjI0NzE5Mzc0NzAw.GrrUV_msNF3PZfrGhUUgKvDjT-oLiVmekP8oKGjHQFog.AshxwDZpAbcPFdAE4RjcJem7JV6jYbKcn1x5hMWT9NEg.PNG.jb-eom/%ED%8A%B8%EC%9D%B5%ED%95%A0.png?type=w800',
   name: '게코 암컷 9',
@@ -653,7 +653,7 @@ export const DUMMY_FEMALE_9: EntityData = {
 };
 
 export const DUMMY_FEMALE_10: EntityData = {
-  id: 'HayunbrandgeckoF00000010',
+  id: 'HayunbrndCGF00000010',
   imageSrc:
     'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FG6cRa%2FbtsAkkhC6Oj%2F4LSy5awgNLMSauWKbBm3o1%2Fimg.jpg',
   name: '게코 암컷 10',
@@ -688,7 +688,7 @@ export const DUMMY_FEMALE_10: EntityData = {
 
 
 export const DUMMY_UNKNOWN_1: EntityData = {
-  id: 'HayunbrandgeckoU00000001',
+  id: 'HayunbrndCGU00000001',
   imageSrc:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoDRi2eZVNfazn4JZezD2w5unH6eQbLmGpssgc9FiLWDCvOPaF_qc9YCf_YdVKwqTCuf0&usqp=CAU',
   name: '게코 6',
