@@ -2,14 +2,13 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import BreederBannerImage from '@/../public/breeder-banner.jpeg';
 
-interface Props {
-  searchParams: Promise<{
-    id?: string;
-  }>;
-}
+// interface Props {
+//   searchParams: Promise<{
+//     id?: string;
+//   }>;
+// }
 
-export default async function BreederPage({ searchParams }: Props) {
-  const { id } = await searchParams;
+export default async function BreederPage() {
   return (
     <>
       <div className={styles.Banner}>
