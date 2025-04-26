@@ -21,7 +21,7 @@ export type SearchEntityData = EntityData & {
   },
 };
 
-const RESULTS_SIZE_PER_PAGE = 8;
+const RESULTS_SIZE_PER_PAGE = 6;
 
 async function fetchSearchResults(q: string): Promise<SearchEntityData[]> {
   return getDummySearch().filter((entity) => entity.name.includes(q) || entity.id.includes(q));
@@ -71,7 +71,12 @@ export default async function SearchPage({ searchParams }: Props) {
         ))}
       </div>
 
-      <Pagination currentPage={page} totalPages={totalPages} pageWindowSize={5} resultsPerPage={8} totalResults={searchResults.length} />
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        pageWindowSize={5}
+        resultsPerPage={RESULTS_SIZE_PER_PAGE}
+        totalResults={searchResults.length} />
     </>
   );
 }
