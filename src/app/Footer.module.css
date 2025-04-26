@@ -49,7 +49,7 @@
 .Description {
   color: #4b5563;
   margin-top: 0.5rem;
-  max-width: 28rem;
+  max-width: 29rem;
 }
 
 .Grid {
@@ -137,6 +137,7 @@
   }
   .FlexColumn {
     flex-direction: row;
+    gap: 2rem;
   }
 
   .LogoContainer {
@@ -144,7 +145,10 @@
   }
 
   .Grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 
+      minmax(6rem, 1fr)
+      minmax(5rem, 1fr)
+      minmax(9rem, 1fr);
   }
 
   .Divider {
